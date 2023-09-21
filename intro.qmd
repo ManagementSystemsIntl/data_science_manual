@@ -1,9 +1,5 @@
 # Introduction
 
-This is a book created from markdown and executable code.
+We used to do data science in spreadsheets, while a more select realm of demi-gods used expensive statistical analysis packages or wrote code. Now we have access to open source software that puts immense computing power in the hands of the people. The easy accessibility of such power is both a blessing and a curse.. this manual seeks to bestow the blessings while avoiding the curse.
 
-See @knuth84 for additional discussion of literate programming.
-
-```{r}
-1 + 1
-```
+This manual is already out of date. Tomorrow, we will be able to tell our AI assistants what we want, and the AI instance will provide it to us through some opaque combination of computation and creation. Aspiring analysts are still encouraged to learn this manual as a way to welcome our new overlords.

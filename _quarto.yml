@@ -2,20 +2,44 @@ project:
   type: book
 
 book:
-  title: "Data science manual"
-  author: "Jane Doe"
+  title: "MSI data science manual"
+  subtitle: "A review of analytical approaches followed by Management Systems International"
   date: "9/21/2023"
   chapters:
     - index.qmd
     - intro.qmd
     - summary.qmd
-    - references.qmd
+    - part: "Entering the R ecosystem"
+      chapters: 
+        - 'How R works.qmd'
+        - 'How R programs.qmd'
+        - 'Happy Git with R.qmd'
+        - 'R and Data Science resources.qmd'
+    - part: "Data Analysis Workflow"
+      chapters:
+        - 'Designing an analytical activity.qmd'
+        - 'Sampling.qmd'
+        - 'Data cleaning and preparation.qmd'
+        - 'Reproducibility.qmd'
+        - 'Data exploration.qmd'
+        - 'Data modeling.qmd'
+        - 'Generating client deliverables.qmd'
+    - part: "Reporting"
+      chapters:
+        - 'Reports.qmd'
+        - 'Presentations.qmd'
+        - 'Dashboards.qmd'
+    - part: "Annexes"
+      chapters:
+        - references.qmd
 
 bibliography: references.bib
 
 format:
   html:
     theme: cosmo
+    css: 'data science manual style.css'
+    number-sections: false
   pdf:
     documentclass: scrreprt
 

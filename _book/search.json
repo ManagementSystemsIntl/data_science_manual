@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "MSI data science manual",
+    "section": "",
+    "text": "Preface\nThis manual introduces a variety of analytical approaches MSI adopts in order to learn, teach, and meet its client deliverables."
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "We used to do data science in spreadsheets, while a more select realm of demi-gods used expensive statistical analysis packages or wrote code. Now we have access to open source software that puts immense computing power in the hands of the people. The easy accessibility of such power is both a blessing and a curse.. this manual seeks to bestow the blessings while avoiding the curse.\nThis manual is already out of date. Tomorrow, we will be able to tell our AI assistants what we want, and the AI instance will provide it to us through some opaque combination of computation and creation. Aspiring analysts are still encouraged to learn this manual as a way to welcome our new overlords."
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "Summary",
+    "section": "",
+    "text": "First and foremost, MSI is client driven. We provide what is asked for, following client guidance. Within this framework, we use a variety of analytical approaches and tools that follow best practice while satisfying the guidance we are under.\nThis manual provides an idealized approach of a data analysis. MSI is agnostic about the tools used to conduct an analysis, but the majority of explanation and examples are provided in the R programming language.\nIn unit one, we introduce R, explain how it works, and provide guidance as to how to get set up and start analyzing.\nIn unit two, we go through the steps of a data analysis.\nIn unit three, we review different ways to report your analyses.\nThroughout the journey, we will provide examples of MSI analyses that were used for internal learning, or to generate a client deliverable.\nLet’s start!"
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "Entering the R ecosystem.html",
+    "href": "Entering the R ecosystem.html",
+    "title": "3  Entering the R ecosystem",
+    "section": "",
+    "text": "This is the first content of MSI’s data science manual"
+  }
+]

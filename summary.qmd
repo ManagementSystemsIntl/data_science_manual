@@ -1,7 +1,15 @@
 # Summary
 
-In summary, this book has no content whatsoever.
+First and foremost, MSI is client driven. We provide what is asked for, following client guidance. Within this framework, we use a variety of analytical approaches and tools that follow best practice while satisfying the guidance we are under.
 
-```{r}
-1 + 1
-```
+This manual provides an idealized approach of a data analysis. MSI is agnostic about the tools used to conduct an analysis, but the majority of explanation and examples are provided in the R programming language.
+
+In unit one, we introduce R, explain how it works, and provide guidance as to how to get set up and start analyzing.
+
+In unit two, we go through the steps of a data analysis.
+
+In unit three, we review different ways to report your analyses.
+
+Throughout the journey, we will provide examples of MSI analyses that were used for internal learning, or to generate a client deliverable.
+
+Let's start!
