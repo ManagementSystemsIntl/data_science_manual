@@ -1,3 +1,162 @@
 ---
 title: "Data exploration"
+toc: true
+toc-depth: 3
+number-sections: false
+format:
+  html:
+    code-fold: false
+    page-layout: full
+editor: visual
+reference-location: margin
 ---
+
+```{r global_options, include=F, warning=F, message=F, echo=F, error=F}
+source("../methods corner/misc/prep.r")
+```
+
+# Introduction
+
+In a well-defined study, exploratory analysis may be largely unnecessary. Consider a scenario where the client has identified questions / hypotheses of interest and the additional variables that may predict or mediate the identified outcomes. An activity partner such as MSI was provided the time and resources to consult with stakeholders, scope out the target environment to identify and map the data generating process, and develop an inferential design by which the collected data and analytical routines would address the questions posed by the client. In this scenario, exploratory analysis may be entirely eliminated, and the time that may be spent on exploration is shifted to sensitivity analysis of the pre-identified analytical routines.
+
+On the other hand, consider a scenario where data has been collected for one purpose, and later realized to have possible use with other, not yet identified, purposes. In this case, the initial analysis is entirely exploratory.
+
+# Data visualization
+
+## Data visualization tactics 
+
+### geomtextpath
+
+There are common situations where MSI is tasked with ongoing data collection and evaluation of a client activity. For example, the MENA MELS activity (2020-2024) was tasked with ongoing monitoring and evaluation of the Middle East Partnership for Peace Activity (MEPPA). MEPPA comprised grants to several local partners organized around the common motif of building bonds between different demographic groups. The primary outcome of interest was whether or not a participant in the grant activity reported a perceived increase in understanding the political, social, and economic situation and viewpoints of another group. Data were collected on a rolling basis across several implementing partners, across baseline and endline. That data are summarized as follows:
+
+```{r}
+df1 <- read_csv("data/short demo series/meppa response items.csv",
+                show_col_types=F)
+df1 %>%
+  flextable() %>% 
+  autofit()
+```
+
+For purposes of client reporting, there are three ordinal responses across baseline and endline, for each of three types of viewpoint. There is insufficient data to conduct inferential tests at this level of granularity, but this data may be visualized descriptively.
+
+The [geomtextpath](https://cran.r-project.org/web/packages/geomtextpath/vignettes/geomtextpath.html) package offers the functionality to directly label line-based plots with text that is able to follow a curved path. Simply replace 'geom_line' with 'geom_textpath' and assign the variable to use as the label. The following figures illustrate.
+
+```{r fig.height=5, fig.width=5}
+
+pol <- ggplot(filter(df1, item=="Political views"), aes(endline, perc, color=as.factor(response))) + 
+  geom_textpath(aes(label=lab),
+                size=4) +
+  geom_label(aes(label=paste(round(perc*100,0), "%", sep="")),
+             size=4,
+             label.padding = unit(.14, "lines")) +
+  scale_color_viridis_d(option="D") +
+  scale_x_continuous(limits=c(-.1, 1.1),
+                     breaks=c(0,1),
+                     labels=c("Baseline","Endline")) +
+  scale_y_continuous(labels=percent_format(accuracy=1)) +
+  theme(legend.position="none",
+        axis.text.y=element_blank()) +
+  labs(x="",
+       y="",
+       title="Political situation") 
+
+pol
+
+```
+
+```{r fig.height=5, fig.width=5}
+
+soc <- ggplot(filter(df1, item=="Social views"), aes(endline, perc, color=as.factor(response))) + 
+  geom_textpath(aes(label=lab),
+                size=4) +
+  geom_label(aes(label=paste(round(perc*100,0), "%", sep="")),
+             size=4,
+             label.padding = unit(.14, "lines")) +
+  scale_color_viridis_d(option="D") +
+  scale_x_continuous(limits=c(-.1, 1.1),
+                     breaks=c(0,1),
+                     labels=c("Baseline","Endline")) +
+  scale_y_continuous(labels=percent_format(accuracy=1)) +
+  theme(legend.position="none",
+        axis.text.y=element_blank()) +
+  labs(x="",
+       y="",
+       title="Social situation") 
+
+soc
+
+```
+
+```{r fig.height=5, fig.width=5}
+
+ec <- ggplot(filter(df1, item=="Economic views"), aes(endline, perc, color=as.factor(response))) + 
+  geom_textpath(aes(label=lab),
+                size=4) +
+  geom_label(aes(label=paste(round(perc*100,0), "%", sep="")),
+             size=4,
+             label.padding = unit(.14, "lines")) +
+  scale_color_viridis_d(option="D") +
+  scale_x_continuous(limits=c(-.1, 1.1),
+                     breaks=c(0,1),
+                     labels=c("Baseline","Endline")) +
+  scale_y_continuous(labels=percent_format(accuracy=1)) +
+  theme(legend.position="none",
+        axis.text.y=element_blank()) +
+  labs(x="",
+       y="",
+       title="Economic situation") 
+
+ec
+
+```
+
+Given that the three types of understanding of others' situation are highly correlated, it makes sense to present these measures compactly as aspects of a deeper underlying construct. The [patchwork](https://patchwork.data-imaginist.com/) library allows multiple ggplots to be assembled together as a single plot. The following figure illustrates.
+
+```{r fig.height=4, fig.width=9}
+pol + soc + ec + 
+  plot_annotation(title="How well do you understand the situation of others?")
+
+```
+
+A final use of presenting the data more compactly is to collapse the ordinal responses to binary, and collect the three measures as lines in a single plot. The following data captures each type of understanding as either fair or high understanding as one category, and basic understanding as the other category.
+
+```{r}
+
+dat <- read_csv("data/short demo series/meppa item ladder.csv",
+                show_col_types=F)
+
+dat_flx <- dat %>%
+  flextable() %>%
+  autofit() 
+
+dat_flx
+
+```
+
+With this simplified data summary, the trendline for each type of understanding may now be collected in a single plot.
+
+```{r fig.width=6, fig.height=6}
+ggplot(dat, aes(endline, perc, color=as.factor(item))) + 
+  geom_textpath(aes(label=item),
+                size=4) +
+  geom_label(aes(label=paste(round(perc*100,0), "%", sep="")),
+             size=4,
+             label.padding = unit(.14, "lines")) +
+  scale_color_viridis_d(option="D") +
+  scale_x_continuous(limits=c(-.1, 1.1),
+                     breaks=c(0,1),
+                     labels=c("Baseline","Endline")) +
+  scale_y_continuous(labels=percent_format(accuracy=1),
+                     breaks=c(.5,1),
+                     sec.axis=dup_axis(breaks=c(.804,.827,.853),
+                                       labels=c("+22","+12","+24"))) +
+  theme(legend.position="none",
+        axis.text.y.left=element_blank()) +
+  labs(x="",
+       y="",
+       caption="Proportion reporting fair or high\nunderstanding of others' situation")
+```
+
+Note further the use of secondary axis breaks to illustrate the change score for each trendline from baseline to endline.
+
+The R computing language allows for several ways to customize the use of labels in statistical or descriptive graphics. This short demo has illustrated MSI's use of the geomtextpath package to place labels directly along the line or curve of a plot. This illustration used only straight lines between two points in time. For additional use cases of the geomtextpath package, see the package [vignette](https://cran.r-project.org/web/packages/geomtextpath/vignettes/geomtextpath.html).
