@@ -3,8 +3,6 @@ title: "How R works"
 ---
 
 
-## Why use R
-
 Most of us are familiar with Excel or used a software like SPSS, SAS, or STATA in school. Some of us use these regularly at work. 
 
 A programming environment, such as R, offers some cool stuff. 
@@ -29,4 +27,3 @@ A programming environment, such as R, offers some cool stuff.
 
 To realize these benefits, however, requires understanding how R works.
 
-## How R works
