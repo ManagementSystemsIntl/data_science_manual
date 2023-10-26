@@ -34,11 +34,12 @@ In R, you create objects and then use those objects for your analysis. Objects a
 a <- 5
 ```
 
-We've assigned the object, `a`, the value of 5. The assignment operator `<-` is what tells R to assign the value of 5 to `a`. 
+We have assigned the object, `a`, the value of 5. The assignment operator `<-` is what tells R to assign the value of 5 to `a`. 
 
-Now we can use the object `a`. As in `a + a.`
+Now we can use the object `a`. As in `a + a.` We use the `#` to annotate our code for human readers. R will not compute any text to the right of a `#`. Annotating code is very helpful for code review and for remembering what you were doing when you open up a script that you have not worked on for 6 months.
 
 ```{r}
+# Assign a the value of 5
 a <- 5
 
 # Add a + a (or 5 +5)
@@ -53,10 +54,9 @@ a <- 5
 # Assign the value of a + a to b
 b <- a + a
 
+#print value of b
 b
 
-# b squared
-b^2
 ```
 
 
@@ -73,10 +73,66 @@ A vector is the most basic data structure in R. A vector can only contain a sing
 Here's a vector
 
 ```{r}
+# Create vectors
 vector <- 10
 vector1 <- c(10, 14, 27, 99)
 vector2 <- c("purple", "blue", "red")
 
+# Print the value of each vector 
 vector
+vector1
+vector2
 ```
 
+## Matrices
+A matrix is a vector with dimensions - it has rows and columns. As with a vector, the elements of a matrix must be of the same data type. Here are a few examples.
+
+```{r}
+# Create a 2 x 2 matrix with the numbers 1 through 4
+m <- matrix(1:4, nrow = 2, ncol = 2) 
+
+# Note that the matrix is filled column-wise. (e.g., it completes # the left column with 1 and 2 before moving to the right column 
+# and entering 3 and 4 
+m
+```
+
+## Lists
+A list is a vector that can have multiple data types. You can call `class()` on any object in R to display the type of object that it is.
+
+```{r}
+# Make a list a
+a <- list(10, "red", 74, "blue")
+
+# What is the class, or type, of a?
+class(a)
+```
+
+
+## Dataframes
+You can think of a dataframe as your Excel Spreadheet. At MSI, this is the most common form of dataset. We read a .xlsx or .csv file into R, and we get a dataframe. At its core, a dataframe is a list of lists where each list (column) is the same length (i.e., it is a “rectangular list”). A data frame can contain many types of data because it is a collection of lists, and lists, as you remember, can consist of multiple data types. 
+
+```{r}
+# Create a dataframe called df
+
+df <- data.frame(a = c(10,20,30,40)
+                 , b = c('book', 'pen', 'textbook', 'pencil_case')
+                 , c = c(TRUE,FALSE,TRUE,FALSE)
+                 , d = c(TRUE,FALSE,TRUE,FALSE))
+
+# Print df
+df
+```
+
+Now that we have a dataframe, we want to look at some of its details using `glimpse()`.
+
+```{r}
+# Create a dataframe called df
+
+df <- data.frame(a = c(10,20,30,40)
+                 , b = c('book', 'pen', 'textbook', 'pencil_case')
+                 , c = c(TRUE,FALSE,TRUE,FALSE)
+                 , d = c(TRUE,FALSE,TRUE,FALSE))
+
+# Look at structure of df
+dplyr::glimpse(df)
+```

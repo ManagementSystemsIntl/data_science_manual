@@ -60,7 +60,7 @@
     "href": "How R works.html#basic-use",
     "title": "How R works",
     "section": "Basic use",
-    "text": "Basic use\nIn R, you create objects and then use those objects for your analysis. Objects are made up of whatever you assign them to. They can be a direct value, a file, a graphic, etc. Here’s an example:\n\na &lt;- 5\n\nWe’ve assigned the object, a, the value of 5. The assignment operator &lt;- is what tells R to assign the value of 5 to a.\nNow we can use the object a. As in a + a.\n\na &lt;- 5\n\n# Add a + a (or 5 +5)\na+a\n\n[1] 10\n\n\nNotice that R understands to output the value of a+a without any additional instructions. Or, you could store the value of a + a as a new object.\n\na &lt;- 5\n\n# Assign the value of a + a to b\nb &lt;- a + a\n\nb\n\n[1] 10\n\n# b squared\nb^2\n\n[1] 100"
+    "text": "Basic use\nIn R, you create objects and then use those objects for your analysis. Objects are made up of whatever you assign them to. They can be a direct value, a file, a graphic, etc. Here’s an example:\n\na &lt;- 5\n\nWe have assigned the object, a, the value of 5. The assignment operator &lt;- is what tells R to assign the value of 5 to a.\nNow we can use the object a. As in a + a. We use the # to annotate our code for human readers. R will not compute any text to the right of a #.\n\n# Assign a the value of 5\na &lt;- 5\n\n# Add a + a (or 5 +5)\na+a\n\n[1] 10\n\n\nNotice that R understands to output the value of a+a without any additional instructions. Or, you could store the value of a + a as a new object.\n\na &lt;- 5\n\n# Assign the value of a + a to b\nb &lt;- a + a\n\n#print value of b\nb\n\n[1] 10"
   },
   {
     "objectID": "How R works.html#data-structures",
