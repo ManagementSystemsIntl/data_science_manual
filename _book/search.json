@@ -47,5 +47,26 @@
     "title": "How R works",
     "section": "How R works",
     "text": "How R works"
+  },
+  {
+    "objectID": "How R works.html",
+    "href": "How R works.html",
+    "title": "How R works",
+    "section": "",
+    "text": "Most of us are familiar with Excel or used a software like SPSS, SAS, or STATA in school. Some of us use these regularly at work.\nA programming environment, such as R, offers some cool stuff.\n\nR is open-source and free. It has a huge support community that is constantly de-bugging and creating new functionalities.\nIf you find an analysis or cool example, the code is almost always included. The R community is all about sharing.\nR was developed specifically for statistical programming.\nIf you can imagine an analytic task, you can implement it in R.\nAnalyses in R are transparent, easily shareable, and reproducible. Can you remember every step you did to create a data visualization in Excel so that someone else could add to it?\nR integration with Github allows a team to work together.\nR can read and write in virtually any data format.\nR can be used for any data science task: scraping websites, developing websites, making static or interactive charts, automating repetitive tasks, statistical computations, querying databases, and many others.\nR has a lot of inter-operability with other platforms.\n\nTo realize these benefits, however, requires understanding how R works."
+  },
+  {
+    "objectID": "How R works.html#basic-use",
+    "href": "How R works.html#basic-use",
+    "title": "How R works",
+    "section": "Basic use",
+    "text": "Basic use\nIn R, you create objects and then use those objects for your analysis. Objects are made up of whatever you assign them to. They can be a direct value, a file, a graphic, etc. Here’s an example:\n\na &lt;- 5\n\nWe’ve assigned the object, a, the value of 5. The assignment operator &lt;- is what tells R to assign the value of 5 to a.\nNow we can use the object a. As in a + a.\n\na &lt;- 5\n\n# Add a + a (or 5 +5)\na+a\n\n[1] 10\n\n\nNotice that R understands to output the value of a+a without any additional instructions. Or, you could store the value of a + a as a new object.\n\na &lt;- 5\n\n# Assign the value of a + a to b\nb &lt;- a + a\n\nb\n\n[1] 10\n\n# b squared\nb^2\n\n[1] 100"
+  },
+  {
+    "objectID": "How R works.html#data-structures",
+    "href": "How R works.html#data-structures",
+    "title": "How R works",
+    "section": "Data Structures",
+    "text": "Data Structures\nThe primary data structures in R are vectors, matrices, lists, and data frames. They all basically begin as a vector. The idea here is not to master what the data structures are, but to understand how R handles each one as it will affect more advanced coding operations. Knowledge of data structures is also helpful when debugging code because error messages will reference the different data structures.\nNaturally, we will start with the most “atomic” of the data structures, the (atomic) vector.\n\nVectors\nA vector is the most basic data structure in R. A vector can only contain a single data type. It can be any of logical, integer, double, character, complex or raw, but it cannot mix and match types.\nHere’s a vector\n\nvector &lt;- 10\nvector1 &lt;- c(10, 14, 27, 99)\nvector2 &lt;- c(\"purple\", \"blue\", \"red\")\n\nvector\n\n[1] 10"
   }
 ]
