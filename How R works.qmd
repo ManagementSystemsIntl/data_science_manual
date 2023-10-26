@@ -1,3 +1,32 @@
 ---
 title: "How R works"
 ---
+
+
+## Why use R
+
+Most of us are familiar with Excel or used a software like SPSS, SAS, or STATA in school. Some of us use these regularly at work. 
+
+A programming environment, such as R, offers some cool stuff. 
+
+* R is open-source and free. It has a huge support community that is constantly de-bugging and creating new functionalities.
+
+* If you find an analysis or cool example, the code is almost always included. The R community is all about sharing.
+
+* R was developed specifically for statistical programming. 
+
+* If you can imagine an analytic task, you can implement it in R.
+
+* Analyses in R are transparent, easily shareable, and reproducible. Can you remember every step you did to create a data visualization in Excel so that someone else could add to it? 
+
+* R integration with Github allows a team to work together. 
+
+* R can read and write in virtually any data format.
+
+* R can be used for any data science task: scraping websites, developing websites, making static or interactive charts, automating repetitive tasks, statistical computations, querying databases, and many others.
+
+* R has a lot of inter-operability with other platforms.
+
+To realize these benefits, however, requires understanding how R works.
+
+## How R works
