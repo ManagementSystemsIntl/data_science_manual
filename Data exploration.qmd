@@ -12,7 +12,7 @@ reference-location: margin
 ---
 
 ```{r global_options, include=F, warning=F, message=F, echo=F, error=F}
-source(here::here("../methods-corner/misc/prep.r"))
+source(here::here("../methods corner/misc/prep.r"))
 ```
 
 # Introduction
@@ -186,7 +186,7 @@ library(geodata) #to download administrative boundaries
 ```{r cities}
 
 #It is a csv file so I use the read_csv function and provide the file path
-cities <- read_csv(here::here("../methods-corner/Map demo/data/Madagascar_Cities.csv")
+cities <- read_csv(here::here("../methods corner/Map demo/data/Madagascar_Cities.csv")
                    , show_col_types = FALSE)
 
 #Observe the first few rows of data
