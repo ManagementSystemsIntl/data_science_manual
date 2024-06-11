@@ -14,9 +14,11 @@ book:
       chapters: 
         - 'How R works.qmd'
         - 'How R programs.qmd'
+    - part: "Workflow"
+      chapters: 
         - 'Happy Git with R.qmd'
         - 'R and Data Science resources.qmd'
-    - part: "Data Analysis Workflow"
+    - part: "Data Analysis"
       chapters:
         - 'Designing an analytical activity.qmd'
         - 'Sampling.qmd'

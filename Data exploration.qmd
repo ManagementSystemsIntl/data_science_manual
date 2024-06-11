@@ -161,7 +161,7 @@ Note further the use of secondary axis breaks to illustrate the change score for
 
 The R computing language allows for several ways to customize the use of labels in statistical or descriptive graphics. This short demo has illustrated MSI's use of the geomtextpath package to place labels directly along the line or curve of a plot. This illustration used only straight lines between two points in time. For additional use cases of the geomtextpath package, see the package [vignette](https://cran.r-project.org/web/packages/geomtextpath/vignettes/geomtextpath.html).
 
-### Mapping
+# Mapping
 
 Much of our data is collected from surveys and has geographic coordinates associated with a point of collection, a house, or a city, etc. It can be useful to generate a map to get a sense of where the data is coming from. Mapping is a part of MSI's exploratory data analysis process and is also used in developing a sampling plan and in producing high quality data vizualizations for clients. This section provides a brief introduction into mapping in R.
 
