@@ -1,3 +1,57 @@
 ---
 title: "Data cleaning and preparation"
 ---
+
+## Instrument Design and Scripting
+
+### Instrument Design and Scripting Workflows
+
+In the process of designing and scripting instruments for data collection, it is crucial to follow a systematic workflow that ensures accuracy, completeness, and ease of updating. Before going through this section it is important to consider several overarching points:
+
+-   Client preferences will likely dictate in what form instruments are shared.
+-   Spending the time to develop a thorough data dictionary from the onset is worth it!
+-   Involve both HO and FO activity managers in instrument pre-testing whenever possible.
+
+Below, we outline two workflows: the "Typical" Instrument Design and Scripting Workflow, and the "Proposed" Instrument Design and Scripting Workflow. The proposed workflow aims to address and improve upon the shortcomings observed in the typical workflow.
+
+"Typical" Instrument Design and Scripting Workflow The typical workflow consists of five main stages:
+
+IP/Client Document Review and Consultations:
+
+-   This initial stage involves reviewing relevant documents provided by the implementing partners (IPs) or clients and conducting consultations to understand the requirements and context.
+
+Instrument Development in Word:
+
+-   Based on the gathered information, instruments are developed in Word documents. This step is critical but often leads to instruments that are difficult to update and manage, especially regarding data names and skip logic.
+
+Client/IP Feedback:
+
+-   The draft instruments are then shared with the client or IP for feedback. This stage is essential for ensuring the instrument meets the client's needs and expectations.
+
+Update Instruments in Word:
+
+-   Following feedback, the instruments are updated in Word. This iterative process can be time-consuming and prone to errors, particularly in managing complex logic and data structures. Script Instruments from Word into Data Collection Software:
+
+-   Finally, the instruments are scripted into the data collection software. This step often reveals issues not apparent in the Word documents, such as missing data names and ineffective skip logic, making the scripting process cumbersome. Typically, the client version of the instruments lacks unique data names, effective skip logic, and is challenging to update, leading to inefficiencies and potential errors in the data collection process.
+
+Proposed Instrument Design and Scripting Workflow To overcome the limitations of the typical workflow, the proposed workflow introduces a more structured and efficient approach.
+
+IP/Client Document Review and Consultations:
+
+-   As in the typical workflow, this stage involves a thorough review of documents and consultations to gather requirements.
+
+Data Dictionary Development:
+
+-   Instead of directly developing instruments in Word, this stage focuses on creating a comprehensive data dictionary. The data dictionary includes unique data names, skip logic, and translations, providing a clear and structured framework for the instruments.
+
+Client/IP Feedback:
+
+-   The data dictionary is shared with the client or IP for feedback, ensuring that all necessary elements are captured and agreed upon before developing the instruments. Update Data Dictionary:
+
+Based on the feedback, the data dictionary is updated. This step ensures that any changes or additions are systematically incorporated, maintaining the integrity and structure of the data. Script Instruments into Data Collection Software:
+
+-   With a well-defined data dictionary, scripting the instruments into the data collection software becomes more straightforward and less error-prone. The unique data names and effective skip logic defined in the data dictionary ensure a smooth transition from design to implementation.
+
+By adopting the proposed workflow, the instrument design and scripting process becomes more efficient and reliable. The use of a data dictionary ensures that all elements are clearly defined and managed, reducing the likelihood of errors and making the instruments easier to update and maintain. This approach not only improves the quality of the instruments but also enhances the overall efficiency of the data collection process.
+
+## Common Scripting Issues
