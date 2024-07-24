@@ -242,7 +242,17 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#instrument-design-and-scripting" id="toc-instrument-design-and-scripting" class="nav-link active" data-scroll-target="#instrument-design-and-scripting">Instrument Design and Scripting</a>
+  <ul class="collapse">
+  <li><a href="#instrument-design-and-scripting-workflows" id="toc-instrument-design-and-scripting-workflows" class="nav-link" data-scroll-target="#instrument-design-and-scripting-workflows">Instrument Design and Scripting Workflows</a></li>
+  </ul></li>
+  <li><a href="#common-scripting-issues" id="toc-common-scripting-issues" class="nav-link" data-scroll-target="#common-scripting-issues">Common Scripting Issues</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -264,8 +274,60 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="instrument-design-and-scripting" class="level2">
+<h2 class="anchored" data-anchor-id="instrument-design-and-scripting">Instrument Design and Scripting</h2>
+<section id="instrument-design-and-scripting-workflows" class="level3">
+<h3 class="anchored" data-anchor-id="instrument-design-and-scripting-workflows">Instrument Design and Scripting Workflows</h3>
+<p>In the process of designing and scripting instruments for data collection, it is crucial to follow a systematic workflow that ensures accuracy, completeness, and ease of updating. Before going through this section it is important to consider several overarching points:</p>
+<ul>
+<li>Client preferences will likely dictate in what form instruments are shared.</li>
+<li>Spending the time to develop a thorough data dictionary from the onset is worth it!</li>
+<li>Involve both HO and FO activity managers in instrument pre-testing whenever possible.</li>
+</ul>
+<p>Below, we outline two workflows: the “Typical” Instrument Design and Scripting Workflow, and the “Proposed” Instrument Design and Scripting Workflow. The proposed workflow aims to address and improve upon the shortcomings observed in the typical workflow.</p>
+<p>“Typical” Instrument Design and Scripting Workflow The typical workflow consists of five main stages:</p>
+<p>IP/Client Document Review and Consultations:</p>
+<ul>
+<li>This initial stage involves reviewing relevant documents provided by the implementing partners (IPs) or clients and conducting consultations to understand the requirements and context.</li>
+</ul>
+<p>Instrument Development in Word:</p>
+<ul>
+<li>Based on the gathered information, instruments are developed in Word documents. This step is critical but often leads to instruments that are difficult to update and manage, especially regarding data names and skip logic.</li>
+</ul>
+<p>Client/IP Feedback:</p>
+<ul>
+<li>The draft instruments are then shared with the client or IP for feedback. This stage is essential for ensuring the instrument meets the client’s needs and expectations.</li>
+</ul>
+<p>Update Instruments in Word:</p>
+<ul>
+<li><p>Following feedback, the instruments are updated in Word. This iterative process can be time-consuming and prone to errors, particularly in managing complex logic and data structures. Script Instruments from Word into Data Collection Software:</p></li>
+<li><p>Finally, the instruments are scripted into the data collection software. This step often reveals issues not apparent in the Word documents, such as missing data names and ineffective skip logic, making the scripting process cumbersome. Typically, the client version of the instruments lacks unique data names, effective skip logic, and is challenging to update, leading to inefficiencies and potential errors in the data collection process.</p></li>
+</ul>
+<p>Proposed Instrument Design and Scripting Workflow To overcome the limitations of the typical workflow, the proposed workflow introduces a more structured and efficient approach.</p>
+<p>IP/Client Document Review and Consultations:</p>
+<ul>
+<li>As in the typical workflow, this stage involves a thorough review of documents and consultations to gather requirements.</li>
+</ul>
+<p>Data Dictionary Development:</p>
+<ul>
+<li>Instead of directly developing instruments in Word, this stage focuses on creating a comprehensive data dictionary. The data dictionary includes unique data names, skip logic, and translations, providing a clear and structured framework for the instruments.</li>
+</ul>
+<p>Client/IP Feedback:</p>
+<ul>
+<li>The data dictionary is shared with the client or IP for feedback, ensuring that all necessary elements are captured and agreed upon before developing the instruments. Update Data Dictionary:</li>
+</ul>
+<p>Based on the feedback, the data dictionary is updated. This step ensures that any changes or additions are systematically incorporated, maintaining the integrity and structure of the data. Script Instruments into Data Collection Software:</p>
+<ul>
+<li>With a well-defined data dictionary, scripting the instruments into the data collection software becomes more straightforward and less error-prone. The unique data names and effective skip logic defined in the data dictionary ensure a smooth transition from design to implementation.</li>
+</ul>
+<p>By adopting the proposed workflow, the instrument design and scripting process becomes more efficient and reliable. The use of a data dictionary ensures that all elements are clearly defined and managed, reducing the likelihood of errors and making the instruments easier to update and maintain. This approach not only improves the quality of the instruments but also enhances the overall efficiency of the data collection process.</p>
+</section>
+</section>
+<section id="common-scripting-issues" class="level2">
+<h2 class="anchored" data-anchor-id="common-scripting-issues">Common Scripting Issues</h2>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
