@@ -25,7 +25,7 @@ On the other hand, consider a scenario where data has been collected for one pur
 
 ## Data visualization tactics
 
-### geomtextpath
+### Incorporating labels into lines or other geoms (geomtextpath)
 
 There are common situations where MSI is tasked with ongoing data collection and evaluation of a client activity. For example, the MENA MELS activity (2020-2024) was tasked with ongoing monitoring and evaluation of the Middle East Partnership for Peace Activity (MEPPA). MEPPA comprised grants to several local partners organized around the common motif of building bonds between different demographic groups. The primary outcome of interest was whether or not a participant in the grant activity reported a perceived increase in understanding the political, social, and economic situation and viewpoints of another group. Data were collected on a rolling basis across several implementing partners, across baseline and endline. That data are summarized as follows:
 
@@ -160,6 +160,56 @@ ggplot(dat, aes(endline, perc, color=as.factor(item))) +
 Note further the use of secondary axis breaks to illustrate the change score for each trendline from baseline to endline.
 
 The R computing language allows for several ways to customize the use of labels in statistical or descriptive graphics. This short demo has illustrated MSI's use of the geomtextpath package to place labels directly along the line or curve of a plot. This illustration used only straight lines between two points in time. For additional use cases of the geomtextpath package, see the package [vignette](https://cran.r-project.org/web/packages/geomtextpath/vignettes/geomtextpath.html).
+
+
+### GANTT charts
+
+Sometimes it can be helpful to incorporate a more visual presentation of GANTT charts into our planning documents and client communications. The following table is an example of a simplified GANTT that was extracted from a larger GANTT from for the purposes of identifying the specific areas that could be subject to monitoring or evaluation activities. 
+
+```{r}
+gantt <- read_excel("data/short demo series/aqbe - GANTT.xlsx")
+
+gantt %>%
+  flextable()
+
+```
+
+To visualize this as a GANTT chart using the ggplot package in R, we first need to stack the dates in rows rather than columns. Note that R and ggplot usually prefer to work with data in long format (stacked rows) rather than wide format (variable values as columns). 
+
+```{r}
+gant2 <- gantt %>%
+  pivot_longer(10:11,
+               names_to="Type",
+               values_to="Date")
+
+gant2 %>%
+  flextable()
+
+```
+
+Now we can plot the dates on the x-axis and the activity on the y-axis (ordered by the index variable). Our geom will be a line, and an additional aesthetic will be to color the lines by one of our labels. 
+
+```{r}
+
+ggplot(gant2, aes(Date, fct_rev(fct_reorder(Activity,num)), color=Label)) +
+  geom_line(size=5) +
+#  geom_label(aes(label=Label4)) +
+  scale_x_datetime(limits=c(as.POSIXct("2024-03-01"), as.POSIXct("2027-08-01")),
+                   date_breaks="6 months",
+                   #date_breaks="17 days",
+                   date_labels="%b-%y") +
+  #, date_labels=c("June 7","21","Jul 5","19","Aug 2","16","30","Sep 13","27","Oct 11")) +
+  scale_y_discrete(labels=label_wrap(25)) +
+  scale_color_viridis_d() +
+  labs(x="",
+       y="") +
+  theme(legend.position="none",
+        legend.title=element_blank())
+
+```
+
+This GANTT is more visually appealing, and still retains utility in highlighting what activities occur and when. Note that we have suppressed the legend created by the color aesthetic, but we could have kept it in order to communicate additional information. 
+
 
 # Mapping
 
