@@ -137,3 +137,141 @@ df <- data.frame(a = c(10,20,30,40)
 # Look at structure of df
 dplyr::glimpse(df)
 ```
+
+## Factors
+
+Factors are numeric vectors that contain only pre-defined values (categories), and where each of these categories has a label.
+
+```{r}
+a <- sample(1:2, 100, replace=T)
+table(a)
+```
+
+```{r}
+a_f <- factor(a, labels=c("Male","Female"))
+table(a_f)
+```
+
+Note that the labels are just labels, the underlying representation is still 1 and 2.
+
+```{r}
+str(a_f)
+```
+
+
+Factors can sometimes cause trouble. More contemporary practice is to stick with an integer data type and add your own labels. 
+
+```{r}
+library(tidyverse)
+library(sjmisc)
+library(sjlabelled)
+
+a_l <- a %>%
+  set_labels(labels=c("Male","Female"))
+str(a_l)
+```
+
+```{r}
+frq(a)
+```
+
+```{r}
+frq(a_f)
+```
+
+```{r}
+frq(a_l)
+```
+
+The underlying integers behind factor labels have no ordering. To establish an ordering, make an ordered factor. 
+
+```{r}
+ord <- sample(1:5, 100, replace=T)
+table(ord)
+```
+
+```{r}
+ord.labs <- c("Not at all","A little","Somewhat","Much","Completely")
+ord.fac <- ordered(ord, labels=ord.labs)
+table(ord.fac)
+```
+
+But again, you have to be careful not to accidentally jumble the underlying integers with the ordered labels. 
+
+To keep things more explicit, I would still stick with an integer variable with labels, rather than an ordered factor. 
+
+```{r}
+ord.l <- ord %>%
+  set_labels(labels=ord.labs)
+table(ord.l)
+
+```
+
+```{r}
+frq(ord.l)
+```
+
+When you're ready to dive into this sometimes-frustrating subject, start here: 
+
+* [forcats](https://forcats.tidyverse.org/) package in the tidyverse
+* [working with labelled data](https://cran.r-project.org/web/packages/sjlabelled/vignettes/labelleddata.html)
+* [wrangling categorical data in R](https://peerj.com/preprints/3163/)
+
+## Sub-setting
+
+You can cut up your objects into other objects. The base R way to do this is to use brackets. 
+
+### sub-setting vectors
+
+```{r}
+a <- rpois(5, 8)
+a
+```
+
+```{r}
+a[1:3]
+```
+
+```{r}
+a[c(1,4,2)]
+```
+
+```{r}
+a[-2]
+```
+
+```{r}
+a[a>9]
+```
+
+### sub-setting data frames
+
+Since data frames are two dimensional, you usually (but not always) need to specify both dimensions.
+
+```{r}
+str(df)
+```
+
+```{r}
+
+df_f <- df[1:5,2]
+str(df_f)
+
+```
+
+The comma within the bracket specifies rows and columns. 
+
+More contemporary practice uses what is referred to as the tidyverse. 
+
+
+
+
+
+
+
+
+
+
+
+
+
