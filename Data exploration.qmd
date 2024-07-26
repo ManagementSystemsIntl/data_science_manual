@@ -163,11 +163,7 @@ The R computing language allows for several ways to customize the use of labels 
 
 ### Gantt charts
 
-<<<<<<< HEAD
 Sometimes it can be helpful to incorporate a more visual presentation of Gantt charts into our planning documents and client communications. The following table is an example of a simplified Gantt that was extracted from a larger Gantt for the purposes of identifying the specific areas that could be subject to monitoring or evaluation activities. 
-=======
-Sometimes it can be helpful to incorporate a more visual presentation of Gantt charts into our planning documents and client communications. The following table is an example of a simplified Gantt that was extracted from a larger Gantt from for the purposes of identifying the specific areas that could be subject to monitoring or evaluation activities.
->>>>>>> 905a8df01de565f0b344485bfb83736cd9e10761
 
 ```{r}
 gantt <- read_excel("data/short demo series/aqbe - GANTT.xlsx")
