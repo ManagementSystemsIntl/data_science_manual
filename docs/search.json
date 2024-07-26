@@ -1,0 +1,307 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "MSI data science manual",
+    "section": "",
+    "text": "Preface\nThis manual introduces a variety of analytical approaches MSI adopts in order to learn, teach, and meet its client deliverables.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "We used to do data science in spreadsheets, while a more select realm of demi-gods used expensive statistical analysis packages or wrote code. Now we have access to open source software that puts immense computing power in the hands of the people. The easy accessibility of such power is both a blessing and a curse. This manual seeks to bestow the blessings while avoiding the curse.\nThis manual is already out of date. Tomorrow, we will be able to tell our AI assistants what we want, and the AI instance will provide it to us through some opaque combination of computation and creation. Aspiring analysts are still encouraged to learn this manual as a way to welcome our new overlords.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "Summary",
+    "section": "",
+    "text": "First and foremost, MSI is client driven. We provide what is asked for, following client guidance. Within this framework, we use a variety of analytical approaches and tools that follow best practice while satisfying the guidance we are under.\nThis manual provides an idealized approach of a data analysis. MSI is agnostic about the tools used to conduct an analysis, but the majority of explanation and examples are provided in the R programming language.\nIn unit one, we introduce R, explain how it works, and provide guidance as to how to get set up and start analyzing.\nIn unit two, we go through the steps of a data analysis.\nIn unit three, we review different ways to report your analyses.\nThroughout the journey, we will provide examples of MSI analyses that were used for internal learning, or to generate a client deliverable.\nLet’s start!",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
+    ]
+  },
+  {
+    "objectID": "How R works.html",
+    "href": "How R works.html",
+    "title": "How R works",
+    "section": "",
+    "text": "Basic use\nIn R, you create objects and then use those objects for your analysis. Objects are made up of whatever you assign them to. They can be a direct value, a file, a graphic, etc. Here’s an example:\na &lt;- 5\nWe have assigned the object, a, the value of 5. The assignment operator &lt;- is what tells R to assign the value of 5 to a.\nNow we can use the object a. As in a + a. We use the # to annotate our code for human readers. R will not compute any text to the right of a #. Annotating code is very helpful for code review and for remembering what you were doing when you open up a script that you have not worked on for 6 months.\n# Assign a the value of 5\na &lt;- 5\n\n# Add a + a (or 5 +5)\na+a\n\n[1] 10\nNotice that R understands to output the value of a+a without any additional instructions. Or, you could store the value of a + a as a new object.\na &lt;- 5\n\n# Assign the value of a + a to b\nb &lt;- a + a\n\n#print value of b\nb\n\n[1] 10",
+    "crumbs": [
+      "Entering the R ecosystem",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>How R works</span>"
+    ]
+  },
+  {
+    "objectID": "How R works.html#data-structures",
+    "href": "How R works.html#data-structures",
+    "title": "How R works",
+    "section": "Data Structures",
+    "text": "Data Structures\nThe primary data structures in R are vectors, matrices, lists, and data frames. They all basically begin as a vector. The idea here is not to master what the data structures are, but to understand how R handles each one as it will affect more advanced coding operations. Knowledge of data structures is also helpful when debugging code because error messages will reference the different data structures.\nNaturally, we will start with the most “atomic” of the data structures, the (atomic) vector.\n\nVectors\nA vector is the most basic data structure in R. A vector can only contain a single data type. It can be any of logical, integer, double, character, complex or raw, but it cannot mix and match types.\nHere’s a vector\n\n# Create vectors\nvector &lt;- 10\nvector1 &lt;- c(10, 14, 27, 99)\nvector2 &lt;- c(\"purple\", \"blue\", \"red\")\n\n# Print the value of each vector \nvector\n\n[1] 10\n\nvector1\n\n[1] 10 14 27 99\n\nvector2\n\n[1] \"purple\" \"blue\"   \"red\"",
+    "crumbs": [
+      "Entering the R ecosystem",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>How R works</span>"
+    ]
+  },
+  {
+    "objectID": "How R works.html#matrices",
+    "href": "How R works.html#matrices",
+    "title": "How R works",
+    "section": "Matrices",
+    "text": "Matrices\nA matrix is a vector with dimensions - it has rows and columns. As with a vector, the elements of a matrix must be of the same data type. Here are a few examples.\n\n# Create a 2 x 2 matrix with the numbers 1 through 4\nm &lt;- matrix(1:4, nrow = 2, ncol = 2) \n\n# Note that the matrix is filled column-wise. (e.g., it completes # the left column with 1 and 2 before moving to the right column \n# and entering 3 and 4 \nm\n\n     [,1] [,2]\n[1,]    1    3\n[2,]    2    4",
+    "crumbs": [
+      "Entering the R ecosystem",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>How R works</span>"
+    ]
+  },
+  {
+    "objectID": "How R works.html#lists",
+    "href": "How R works.html#lists",
+    "title": "How R works",
+    "section": "Lists",
+    "text": "Lists\nA list is a vector that can have multiple data types. You can call class() on any object in R to display the type of object that it is.\n\n# Make a list a\na &lt;- list(10, \"red\", 74, \"blue\")\n\n# What is the class, or type, of a?\nclass(a)\n\n[1] \"list\"",
+    "crumbs": [
+      "Entering the R ecosystem",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>How R works</span>"
+    ]
+  },
+  {
+    "objectID": "How R works.html#dataframes",
+    "href": "How R works.html#dataframes",
+    "title": "How R works",
+    "section": "Dataframes",
+    "text": "Dataframes\nYou can think of a dataframe as your Excel Spreadheet. At MSI, this is the most common form of dataset. We read a .xlsx or .csv file into R, and we get a dataframe. At its core, a dataframe is a list of lists where each list (column) is the same length (i.e., it is a “rectangular list”). A data frame can contain many types of data because it is a collection of lists, and lists, as you remember, can consist of multiple data types.\n\n# Create a dataframe called df\n\ndf &lt;- data.frame(a = c(10,20,30,40)\n                 , b = c('book', 'pen', 'textbook', 'pencil_case')\n                 , c = c(TRUE,FALSE,TRUE,FALSE)\n                 , d = c(TRUE,FALSE,TRUE,FALSE))\n\n# Print df\ndf\n\n   a           b     c     d\n1 10        book  TRUE  TRUE\n2 20         pen FALSE FALSE\n3 30    textbook  TRUE  TRUE\n4 40 pencil_case FALSE FALSE\n\n\nNow that we have a dataframe, we want to look at some of its details using glimpse().\n\n# Create a dataframe called df\n\ndf &lt;- data.frame(a = c(10,20,30,40)\n                 , b = c('book', 'pen', 'textbook', 'pencil_case')\n                 , c = c(TRUE,FALSE,TRUE,FALSE)\n                 , d = c(TRUE,FALSE,TRUE,FALSE))\n\n# Look at structure of df\ndplyr::glimpse(df)\n\nRows: 4\nColumns: 4\n$ a &lt;dbl&gt; 10, 20, 30, 40\n$ b &lt;chr&gt; \"book\", \"pen\", \"textbook\", \"pencil_case\"\n$ c &lt;lgl&gt; TRUE, FALSE, TRUE, FALSE\n$ d &lt;lgl&gt; TRUE, FALSE, TRUE, FALSE",
+    "crumbs": [
+      "Entering the R ecosystem",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>How R works</span>"
+    ]
+  },
+  {
+    "objectID": "How R works.html#factors",
+    "href": "How R works.html#factors",
+    "title": "How R works",
+    "section": "Factors",
+    "text": "Factors\nFactors are numeric vectors that contain only pre-defined values (categories), and where each of these categories has a label.\n\na &lt;- sample(1:2, 100, replace=T)\ntable(a)\n\na\n 1  2 \n51 49 \n\n\n\na_f &lt;- factor(a, labels=c(\"Male\",\"Female\"))\ntable(a_f)\n\na_f\n  Male Female \n    51     49 \n\n\nNote that the labels are just labels, the underlying representation is still 1 and 2.\n\nstr(a_f)\n\n Factor w/ 2 levels \"Male\",\"Female\": 2 2 1 2 1 1 2 2 2 1 ...\n\n\nFactors can sometimes cause trouble. More contemporary practice is to stick with an integer data type and add your own labels.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(sjmisc)\n\n\nAttaching package: 'sjmisc'\n\nThe following object is masked from 'package:purrr':\n\n    is_empty\n\nThe following object is masked from 'package:tidyr':\n\n    replace_na\n\nThe following object is masked from 'package:tibble':\n\n    add_case\n\nlibrary(sjlabelled)\n\n\nAttaching package: 'sjlabelled'\n\nThe following object is masked from 'package:forcats':\n\n    as_factor\n\nThe following object is masked from 'package:dplyr':\n\n    as_label\n\nThe following object is masked from 'package:ggplot2':\n\n    as_label\n\na_l &lt;- a %&gt;%\n  set_labels(labels=c(\"Male\",\"Female\"))\nstr(a_l)\n\n int [1:100] 2 2 1 2 1 1 2 2 2 1 ...\n - attr(*, \"labels\")= Named num [1:2] 1 2\n  ..- attr(*, \"names\")= chr [1:2] \"Male\" \"Female\"\n\n\n\nfrq(a)\n\nx &lt;integer&gt; \n# total N=100 valid N=100 mean=1.49 sd=0.50\n\nValue |  N | Raw % | Valid % | Cum. %\n-------------------------------------\n    1 | 51 |    51 |      51 |     51\n    2 | 49 |    49 |      49 |    100\n &lt;NA&gt; |  0 |     0 |    &lt;NA&gt; |   &lt;NA&gt;\n\n\n\nfrq(a_f)\n\nx &lt;categorical&gt; \n# total N=100 valid N=100 mean=1.49 sd=0.50\n\nValue  |  N | Raw % | Valid % | Cum. %\n--------------------------------------\nMale   | 51 |    51 |      51 |     51\nFemale | 49 |    49 |      49 |    100\n&lt;NA&gt;   |  0 |     0 |    &lt;NA&gt; |   &lt;NA&gt;\n\n\n\nfrq(a_l)\n\nx &lt;integer&gt; \n# total N=100 valid N=100 mean=1.49 sd=0.50\n\nValue |  Label |  N | Raw % | Valid % | Cum. %\n----------------------------------------------\n    1 |   Male | 51 |    51 |      51 |     51\n    2 | Female | 49 |    49 |      49 |    100\n &lt;NA&gt; |   &lt;NA&gt; |  0 |     0 |    &lt;NA&gt; |   &lt;NA&gt;\n\n\nThe underlying integers behind factor labels have no ordering. To establish an ordering, make an ordered factor.\n\nord &lt;- sample(1:5, 100, replace=T)\ntable(ord)\n\nord\n 1  2  3  4  5 \n19 18 20 14 29 \n\n\n\nord.labs &lt;- c(\"Not at all\",\"A little\",\"Somewhat\",\"Much\",\"Completely\")\nord.fac &lt;- ordered(ord, labels=ord.labs)\ntable(ord.fac)\n\nord.fac\nNot at all   A little   Somewhat       Much Completely \n        19         18         20         14         29 \n\n\nBut again, you have to be careful not to accidentally jumble the underlying integers with the ordered labels.\nTo keep things more explicit, I would still stick with an integer variable with labels, rather than an ordered factor.\n\nord.l &lt;- ord %&gt;%\n  set_labels(labels=ord.labs)\ntable(ord.l)\n\nord.l\n 1  2  3  4  5 \n19 18 20 14 29 \n\n\n\nfrq(ord.l)\n\nx &lt;integer&gt; \n# total N=100 valid N=100 mean=3.16 sd=1.50\n\nValue |      Label |  N | Raw % | Valid % | Cum. %\n--------------------------------------------------\n    1 | Not at all | 19 | 19.00 |   19.00 |  19.00\n    2 |   A little | 18 | 18.00 |   18.00 |  37.00\n    3 |   Somewhat | 20 | 20.00 |   20.00 |  57.00\n    4 |       Much | 14 | 14.00 |   14.00 |  71.00\n    5 | Completely | 29 | 29.00 |   29.00 | 100.00\n &lt;NA&gt; |       &lt;NA&gt; |  0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;\n\n\nWhen you’re ready to dive into this sometimes-frustrating subject, start here:\n\nforcats package in the tidyverse\nworking with labelled data\nwrangling categorical data in R",
+    "crumbs": [
+      "Entering the R ecosystem",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>How R works</span>"
+    ]
+  },
+  {
+    "objectID": "How R works.html#sub-setting",
+    "href": "How R works.html#sub-setting",
+    "title": "How R works",
+    "section": "Sub-setting",
+    "text": "Sub-setting\nYou can cut up your objects into other objects. The base R way to do this is to use brackets.\n\nsub-setting vectors\n\na &lt;- rpois(5, 8)\na\n\n[1]  4  7  7 10  7\n\n\n\na[1:3]\n\n[1] 4 7 7\n\n\n\na[c(1,4,2)]\n\n[1]  4 10  7\n\n\n\na[-2]\n\n[1]  4  7 10  7\n\n\n\na[a&gt;9]\n\n[1] 10\n\n\n\n\nsub-setting data frames\nSince data frames are two dimensional, you usually (but not always) need to specify both dimensions.\n\nstr(df)\n\n'data.frame':   4 obs. of  4 variables:\n $ a: num  10 20 30 40\n $ b: chr  \"book\" \"pen\" \"textbook\" \"pencil_case\"\n $ c: logi  TRUE FALSE TRUE FALSE\n $ d: logi  TRUE FALSE TRUE FALSE\n\n\n\ndf_f &lt;- df[1:5,2]\nstr(df_f)\n\n chr [1:5] \"book\" \"pen\" \"textbook\" \"pencil_case\" NA\n\n\nThe comma within the bracket specifies rows and columns.\nMore contemporary practice uses what is referred to as the tidyverse.",
+    "crumbs": [
+      "Entering the R ecosystem",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>How R works</span>"
+    ]
+  },
+  {
+    "objectID": "Sampling.html",
+    "href": "Sampling.html",
+    "title": "Sampling",
+    "section": "",
+    "text": "Introduction",
+    "crumbs": [
+      "Data Analysis",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Sampling</span>"
+    ]
+  },
+  {
+    "objectID": "Sampling.html#with-replacement",
+    "href": "Sampling.html#with-replacement",
+    "title": "Sampling",
+    "section": "With replacement",
+    "text": "With replacement",
+    "crumbs": [
+      "Data Analysis",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Sampling</span>"
+    ]
+  },
+  {
+    "objectID": "Sampling.html#without-replacement",
+    "href": "Sampling.html#without-replacement",
+    "title": "Sampling",
+    "section": "Without replacement",
+    "text": "Without replacement",
+    "crumbs": [
+      "Data Analysis",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Sampling</span>"
+    ]
+  },
+  {
+    "objectID": "Sampling.html#stratified-sampling",
+    "href": "Sampling.html#stratified-sampling",
+    "title": "Sampling",
+    "section": "Stratified sampling",
+    "text": "Stratified sampling",
+    "crumbs": [
+      "Data Analysis",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Sampling</span>"
+    ]
+  },
+  {
+    "objectID": "Sampling.html#cluster-sampling",
+    "href": "Sampling.html#cluster-sampling",
+    "title": "Sampling",
+    "section": "Cluster sampling",
+    "text": "Cluster sampling",
+    "crumbs": [
+      "Data Analysis",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Sampling</span>"
+    ]
+  },
+  {
+    "objectID": "Sampling.html#using-intraclass-correlation-to-estimate-sample-sizes",
+    "href": "Sampling.html#using-intraclass-correlation-to-estimate-sample-sizes",
+    "title": "Sampling",
+    "section": "Using intraclass-correlation to estimate sample sizes",
+    "text": "Using intraclass-correlation to estimate sample sizes\nThere is simple random sampling and there is complex sampling. Let’s explain how we get to each.\n\nn_rng &lt;- (3.4 * 1.96^2 * .25) / (c(.02, .03, .05)^2 * .95)\n\nsrs &lt;- c((1.96^2*.25)/.05^2,\n         (1.96^2*.25)/.03^2,\n          (1.96^2*.25)/.02^2)\n\n\nout &lt;- data.frame(margin=c(\"5%\",\"3%\", \"2%\"),\n                  srs=srs,\n                  complex=round(rev(n_rng), 0),\n                  scope=c(\"Overall sampling area\", \"One disaggregate\", \"Two disaggregates, nested\"))\nflextable(out) %&gt;% \n  set_header_labels(\n                    margin=\"Margin of error\",\n                    srs=\"Simple random sample\",\n                    complex=\"Complex sample\",\n                    scope=\"Geographic scope\") %&gt;%\n  autofit() \n\nMargin of errorSimple random sampleComplex sampleGeographic scope5%3841,375Overall sampling area3%1,0673,819One disaggregate2%2,4018,593Two disaggregates, nested\n\n\nHow do we derive each type of sample size?\n\nSimple random sampling\nSample size calculation to achieve a given margin of error starts with assumptions of simple random sampling (SRS). A first statistics course establishes a 95% confidence interval around a sample mean, in which 95 out of 100 instances of a given experiment would contain the fixed population parameter.\n\\[\nCI=\\bar{x}\\pm z\\frac{s}{\\sqrt{n}}\n\\]\nWhere z is the z-score for a given confidence level (most commonly 1.96 for a 95% confidence level), s is the sample standard deviation, and n is the sample size. Recognize the expression \\(\\frac{s}{\\sqrt{n}}\\) as the standard deviation of the sample mean, or standard error.\nThe above expression generates the confidence interval from a sample of data. If we’re interested in planning our experiment to reach a desired benchmark margin of error, than we can drop the sample mean and set the margin of error E to the error calculation.\n\\[\nE=z\\frac{s}{\\sqrt{n}}\n\\]\nKnowing that we will set E to our desired benchmark, we rearrange terms to solve for the unknown n.\n\\[\n\\sqrt{n}=\\frac{z*s}{E}\n\\]\n\\[\nn=\\frac{z^2s^2}{E^2}\n\\]\nNote that we can further simplify this expression if we use a proportion as the outcome of interest. Recall that the variance of a proportion p is \\(p*(1-p)\\), which we can plug in for the value of \\(s^2\\). This gives us something more tractable:\n\\[\nn=\\frac{z^2p(1-p)}{E^2}\n\\]\nFurthermore, note that variance is maximized at \\(p=.5\\), such that \\(p(1-p) = .5*.5=.25\\). Maximizing the value of the numerator also maximizes the sample size calculation for any value of p. Therefore, we can assume \\(p=.5\\) so as to calculate the upper bound of the needed sample size. Finally, we’ll plug in \\(z=1.96\\) to set a 95% confidence interval and \\(E=.05\\) as our desired benchmark for margin of error. This lets us solve for n:\n\\[\nn=\\frac{1.96^2*.25}{.05^2}\n\\]\nWhich comes out to 384. This is a common sample size that is quoted for any simple random sample with a margin of error of 5%.\n\n\nCluster sampling\nA common problem is that the sample size based on simple random sampling is often quoted for the needed sample size for household surveys. But, household surveys typically involve a complex design that includes organizing the sampling frame by strata, and then sampling clusters at multiple stages (stratified, multi-stage, cluster sampling design).\nSampling clusters reduces the geographic scope of data collection, relative to a simple random sample. However, this reduced scope comes at the cost of a degree of similarity within the sampled clusters that reduces the amount of effective information contained within the clusters. A simple random sample assumes statistical independence of each element in the sampling frame, but cluster sampling violates the assumption of independence.\nTo adjust for the clustered nature of the data collection, we introduce the design effect deff. The design effect is the variance inflation factor that occurs as we move from simple random sampling to cluster sampling:\n\\[\nDeff_p(\\hat\\theta)=\\frac{var(\\hat\\theta_{cluster})}{var(\\hat\\theta_{srswo})}\n\\]\nWe can enter this adjustment directly into the sample size calculation:\n\\[\nn=\\frac{deff*z^2p(1-p)}{E^2}\n\\]\nAs a final step, we can adjust for non-response by taking the actual response rate in the denominator, which will adjust the sample size upward. This gives us:\n\\[\nn=\\frac{deff*z^2p(1-p)}{E^2r}\n\\]\nwhere r is the response rate, which we’ll set at 95%.\nWe now need to estimate the design effect. We don’t know the complex variance in the denominator of the expression for \\(Deff\\), but we can can estimate \\(Deff\\) through use of the intra-class correlation between clusters, \\(\\rho\\):\n\\[\nD_{eff}=1+(\\bar{b}-1)\\rho\n\\]\nwhere \\(\\bar{b}\\) is the average cluster sample size.\nWe don’t know the design effect or intra-class correlation for Lebanon, but we can look to other surveys. The Arab Barometer Wave 7 surveys in 2021-2022 included Lebanon, from which we can estimate the intra-class correlation and design effect.\n\nrho_out &lt;- samplesize4surveys::ICC(leb$usg, leb$PSU)\n\nrho &lt;- rho_out$ICC\n\nrho # .34\n\n[1] 0.34\n\n\nBased on the Wave 7 Arab Barometer survey, the cluster sample size averaged 5.1 and \\(\\rho=\\).34. From this we can estimate the design effect from this survey as \\(1+((5.1-1)*.34)\\).\n\npsu_n &lt;- leb %&gt;%\n  group_by(PSU) %&gt;%\n  tally() %&gt;%\n  summarise(n=mean(n)) %&gt;%\n  unlist() %&gt;%\n  round(1)\n\npsu_n  \n\n  n \n5.1 \n\ndeff_barom &lt;- 1 + ((psu_n-1)*.34) %&gt;% \n  unlist() %&gt;% \n  round(1)\n\ndeff_barom \n\n  n \n2.4 \n\n\nCluster sampling in the Arab Barometer survey inflated the variance to 2.4 times the variance from a simple random sample. This inflation factor is kept manageable only by the fact that the sample size for each cluster is lower than normal.\nWe can use this design effect from the Arab Barometer survey to inform our sample size projections for the prospective perception survey. Cluster sample sizes usually range from 8-16.\n\ndeff_samp &lt;- data.frame(psu_n=c(6,8,12,16,20)) %&gt;%\n  mutate(deff= round(1 + (psu_n - 1) * .34, 1))\n\nflextable(deff_samp) \n\npsu_ndeff62.783.4124.7166.1207.5\n\n\nWe’ll consider a cluster sample size of 8, with an estimated design effect of 3.4.\nThis adjustment then enters the sample size expression, using a desired margin of error of three percent.\n\\[\nn=\\frac{3.4*1.96^2(.5*.5)}{.03^2*.95}\n\\]\nWhich gives a sample size of 3,819.\n\nn_proj &lt;- (3.4 * 1.96^2 * .25) / (.03^2 * .95)\nn_proj \n\n[1] 3819\n\n\nUsing the design effect from the Wave 7 Arab Barometer survey for Lebanon, we need a sample of 3,820 in order to achieve a desired precision of a 3% margin of error.\nLet’s provide a range of sample sizes, for margins of error of two, three, and five percent.\n\nn_rng &lt;- (3.4 * 1.96^2 * .25) / (c(.02, .03, .05)^2 * .95)\n\nsrs &lt;- c((1.96^2*.25)/.05^2,\n         (1.96^2*.25)/.03^2,\n          (1.96^2*.25)/.02^2)\n\n\nout &lt;- data.frame(margin=c(\"5%\",\"3%\", \"2%\"),\n                  srs=srs,\n                  complex=round(rev(n_rng), 0),\n                  scope=c(\"Overall sampling area\", \"One disaggregate\", \"Two disaggregates, nested\"))\nflextable(out) %&gt;% \n  set_header_labels(\n                    margin=\"Margin of error\",\n                    srs=\"Simple random sample\",\n                    complex=\"Complex sample\",\n                    scope=\"Geographic scope\") %&gt;%\n  autofit() \n\nMargin of errorSimple random sampleComplex sampleGeographic scope5%3841,375Overall sampling area3%1,0673,819One disaggregate2%2,4018,593Two disaggregates, nested\n\n\nMSI generally recommends a margin of error for a household survey of no less than five percent, which would require a sample size of 1,375 after incorporating the information about the clustering effect from the Wave 7 Arab Barometer Survey. To reach a desired margin of error of three percent, we need a sample of 3,819. To reach a desired margin of error of two percent, we need a sample of 8,593.\n\n\nConclusion\nThe use of the intra-class correlation and design effect from the Arab Barometer survey suggests that villages in Lebanon tend to be more homogeneous than what is typically found in other countries. This higher level of homogeneity within villages requires the sampling of additional villages in order to reach a desired level of precision. MSI advises a precision of no less than five percent. This would require a sample of 1,375 and would be representative of the overall sampling area, but it may not be possible to meaningfully examined across any demographics of interest. A more desirable level of precision would be a margin of error of three percent, which would require a sample of 3,819. This would enable precise estimates at the overall level, as well as exploration of findings across a single disaggregate such as urban/rural locality, sex, age group, or education. If USAID would like to have the ability to meaningfully describe differences across more than one demographic (for example, sex within urban or rural locality), then MSI recommends an overall margin of error of two percent, which would require a sample size of 8, 593.",
+    "crumbs": [
+      "Data Analysis",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Sampling</span>"
+    ]
+  },
+  {
+    "objectID": "Data cleaning and preparation.html",
+    "href": "Data cleaning and preparation.html",
+    "title": "Data cleaning and preparation",
+    "section": "",
+    "text": "Instrument Design and Scripting",
+    "crumbs": [
+      "Data Analysis",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data cleaning and preparation</span>"
+    ]
+  },
+  {
+    "objectID": "Data cleaning and preparation.html#instrument-design-and-scripting",
+    "href": "Data cleaning and preparation.html#instrument-design-and-scripting",
+    "title": "Data cleaning and preparation",
+    "section": "",
+    "text": "Instrument Design and Scripting Workflows\nIn the process of designing and scripting instruments for data collection, it is crucial to follow a systematic workflow that ensures accuracy, completeness, and ease of updating. Before going through this section it is important to consider several overarching points:\n\nClient preferences will likely dictate in what form instruments are shared.\nSpending the time to develop a thorough data dictionary from the onset is worth it!\nInvolve both HO and FO activity managers in instrument pre-testing whenever possible.\n\nBelow, we outline two workflows: the “Typical” Instrument Design and Scripting Workflow, and the “Proposed” Instrument Design and Scripting Workflow. The proposed workflow aims to address and improve upon the shortcomings observed in the typical workflow.\n“Typical” Instrument Design and Scripting Workflow The typical workflow consists of five main stages:\nIP/Client Document Review and Consultations:\n\nThis initial stage involves reviewing relevant documents provided by the implementing partners (IPs) or clients and conducting consultations to understand the requirements and context.\n\nInstrument Development in Word:\n\nBased on the gathered information, instruments are developed in Word documents. This step is critical but often leads to instruments that are difficult to update and manage, especially regarding data names and skip logic.\n\nClient/IP Feedback:\n\nThe draft instruments are then shared with the client or IP for feedback. This stage is essential for ensuring the instrument meets the client’s needs and expectations.\n\nUpdate Instruments in Word:\n\nFollowing feedback, the instruments are updated in Word. This iterative process can be time-consuming and prone to errors, particularly in managing complex logic and data structures. Script Instruments from Word into Data Collection Software:\nFinally, the instruments are scripted into the data collection software. This step often reveals issues not apparent in the Word documents, such as missing data names and ineffective skip logic, making the scripting process cumbersome. Typically, the client version of the instruments lacks unique data names, effective skip logic, and is challenging to update, leading to inefficiencies and potential errors in the data collection process.\n\nProposed Instrument Design and Scripting Workflow To overcome the limitations of the typical workflow, the proposed workflow introduces a more structured and efficient approach.\nIP/Client Document Review and Consultations:\n\nAs in the typical workflow, this stage involves a thorough review of documents and consultations to gather requirements.\n\nData Dictionary Development:\n\nInstead of directly developing instruments in Word, this stage focuses on creating a comprehensive data dictionary. The data dictionary includes unique data names, skip logic, and translations, providing a clear and structured framework for the instruments.\n\nClient/IP Feedback:\n\nThe data dictionary is shared with the client or IP for feedback, ensuring that all necessary elements are captured and agreed upon before developing the instruments. Update Data Dictionary:\n\nBased on the feedback, the data dictionary is updated. This step ensures that any changes or additions are systematically incorporated, maintaining the integrity and structure of the data. Script Instruments into Data Collection Software:\n\nWith a well-defined data dictionary, scripting the instruments into the data collection software becomes more straightforward and less error-prone. The unique data names and effective skip logic defined in the data dictionary ensure a smooth transition from design to implementation.\n\nBy adopting the proposed workflow, the instrument design and scripting process becomes more efficient and reliable. The use of a data dictionary ensures that all elements are clearly defined and managed, reducing the likelihood of errors and making the instruments easier to update and maintain. This approach not only improves the quality of the instruments but also enhances the overall efficiency of the data collection process.",
+    "crumbs": [
+      "Data Analysis",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data cleaning and preparation</span>"
+    ]
+  },
+  {
+    "objectID": "Data cleaning and preparation.html#common-scripting-issues",
+    "href": "Data cleaning and preparation.html#common-scripting-issues",
+    "title": "Data cleaning and preparation",
+    "section": "Common Scripting Issues",
+    "text": "Common Scripting Issues",
+    "crumbs": [
+      "Data Analysis",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Data cleaning and preparation</span>"
+    ]
+  },
+  {
+    "objectID": "Data exploration.html",
+    "href": "Data exploration.html",
+    "title": "Data exploration",
+    "section": "",
+    "text": "Introduction\nIn a well-defined study, exploratory analysis may be largely unnecessary. Consider a scenario where the client has identified questions / hypotheses of interest and the additional variables that may predict or mediate the identified outcomes. An activity partner such as MSI was provided the time and resources to consult with stakeholders, scope out the target environment to identify and map the data generating process, and develop an inferential design by which the collected data and analytical routines would address the questions posed by the client. In this scenario, exploratory analysis may be entirely eliminated, and the time that may be spent on exploration is shifted to sensitivity analysis of the pre-identified analytical routines.\nOn the other hand, consider a scenario where data has been collected for one purpose, and later realized to have possible use with other, not yet identified, purposes. In this case, the initial analysis is entirely exploratory.",
+    "crumbs": [
+      "Data Analysis",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Data exploration</span>"
+    ]
+  },
+  {
+    "objectID": "Data exploration.html#data-visualization-tactics",
+    "href": "Data exploration.html#data-visualization-tactics",
+    "title": "Data exploration",
+    "section": "Data visualization tactics",
+    "text": "Data visualization tactics\n\nIncorporating labels into lines or other geoms (geomtextpath)\nThere are common situations where MSI is tasked with ongoing data collection and evaluation of a client activity. For example, the MENA MELS activity (2020-2024) was tasked with ongoing monitoring and evaluation of the Middle East Partnership for Peace Activity (MEPPA). MEPPA comprised grants to several local partners organized around the common motif of building bonds between different demographic groups. The primary outcome of interest was whether or not a participant in the grant activity reported a perceived increase in understanding the political, social, and economic situation and viewpoints of another group. Data were collected on a rolling basis across several implementing partners, across baseline and endline. That data are summarized as follows:\n\ndf1 &lt;- read_csv(\"data/short demo series/meppa response items.csv\",\n                show_col_types=F)\ndf1 %&gt;%\n  flextable() %&gt;% \n  autofit()\n\nitemresponselabendlinenpercPolitical views1Basic understanding0220.286Political views2Fair understanding0380.494Political views3High understanding0170.221Political views1Basic understanding1180.173Political views2Fair understanding1500.481Political views3High understanding1360.346Social views1Basic understanding0300.390Social views2Fair understanding0250.325Social views3High understanding0220.286Social views1Basic understanding1150.147Social views2Fair understanding1520.510Social views3High understanding1350.343Economic views1Basic understanding0320.416Economic views2Fair understanding0300.390Economic views3High understanding0150.195Economic views1Basic understanding1200.196Economic views2Fair understanding1550.539Economic views3High understanding1270.265\n\n\nFor purposes of client reporting, there are three ordinal responses across baseline and endline, for each of three types of viewpoint. There is insufficient data to conduct inferential tests at this level of granularity, but this data may be visualized descriptively.\nThe geomtextpath package offers the functionality to directly label line-based plots with text that is able to follow a curved path. Simply replace ‘geom_line’ with ‘geom_textpath’ and assign the variable to use as the label. The following figures illustrate.\n\npol &lt;- ggplot(filter(df1, item==\"Political views\"), aes(endline, perc, color=as.factor(response))) + \n  geom_textpath(aes(label=lab),\n                size=4) +\n  geom_label(aes(label=paste(round(perc*100,0), \"%\", sep=\"\")),\n             size=4,\n             label.padding = unit(.14, \"lines\")) +\n  scale_color_viridis_d(option=\"D\") +\n  scale_x_continuous(limits=c(-.1, 1.1),\n                     breaks=c(0,1),\n                     labels=c(\"Baseline\",\"Endline\")) +\n  scale_y_continuous(labels=percent_format(accuracy=1)) +\n  theme(legend.position=\"none\",\n        axis.text.y=element_blank()) +\n  labs(x=\"\",\n       y=\"\",\n       title=\"Political situation\") \n\npol\n\n\n\n\n\n\n\n\n\nsoc &lt;- ggplot(filter(df1, item==\"Social views\"), aes(endline, perc, color=as.factor(response))) + \n  geom_textpath(aes(label=lab),\n                size=4) +\n  geom_label(aes(label=paste(round(perc*100,0), \"%\", sep=\"\")),\n             size=4,\n             label.padding = unit(.14, \"lines\")) +\n  scale_color_viridis_d(option=\"D\") +\n  scale_x_continuous(limits=c(-.1, 1.1),\n                     breaks=c(0,1),\n                     labels=c(\"Baseline\",\"Endline\")) +\n  scale_y_continuous(labels=percent_format(accuracy=1)) +\n  theme(legend.position=\"none\",\n        axis.text.y=element_blank()) +\n  labs(x=\"\",\n       y=\"\",\n       title=\"Social situation\") \n\nsoc\n\n\n\n\n\n\n\n\n\nec &lt;- ggplot(filter(df1, item==\"Economic views\"), aes(endline, perc, color=as.factor(response))) + \n  geom_textpath(aes(label=lab),\n                size=4) +\n  geom_label(aes(label=paste(round(perc*100,0), \"%\", sep=\"\")),\n             size=4,\n             label.padding = unit(.14, \"lines\")) +\n  scale_color_viridis_d(option=\"D\") +\n  scale_x_continuous(limits=c(-.1, 1.1),\n                     breaks=c(0,1),\n                     labels=c(\"Baseline\",\"Endline\")) +\n  scale_y_continuous(labels=percent_format(accuracy=1)) +\n  theme(legend.position=\"none\",\n        axis.text.y=element_blank()) +\n  labs(x=\"\",\n       y=\"\",\n       title=\"Economic situation\") \n\nec\n\n\n\n\n\n\n\n\nGiven that the three types of understanding of others’ situation are highly correlated, it makes sense to present these measures compactly as aspects of a deeper underlying construct. The patchwork library allows multiple ggplots to be assembled together as a single plot. The following figure illustrates.\n\npol + soc + ec + \n  plot_annotation(title=\"How well do you understand the situation of others?\")\n\n\n\n\n\n\n\n\nA final use of presenting the data more compactly is to collapse the ordinal responses to binary, and collect the three measures as lines in a single plot. The following data captures each type of understanding as either fair or high understanding as one category, and basic understanding as the other category.\n\ndat &lt;- read_csv(\"data/short demo series/meppa item ladder.csv\",\n                show_col_types=F)\n\ndat_flx &lt;- dat %&gt;%\n  flextable() %&gt;%\n  autofit() \n\ndat_flx\n\nendlinenpercitem0550.714Political situation1860.827Political situation0470.610Social situation1870.853Social situation0450.584Economic situation1820.804Economic situation\n\n\nWith this simplified data summary, the trendline for each type of understanding may now be collected in a single plot.\n\nggplot(dat, aes(endline, perc, color=as.factor(item))) + \n  geom_textpath(aes(label=item),\n                size=4) +\n  geom_label(aes(label=paste(round(perc*100,0), \"%\", sep=\"\")),\n             size=4,\n             label.padding = unit(.14, \"lines\")) +\n  scale_color_viridis_d(option=\"D\") +\n  scale_x_continuous(limits=c(-.1, 1.1),\n                     breaks=c(0,1),\n                     labels=c(\"Baseline\",\"Endline\")) +\n  scale_y_continuous(labels=percent_format(accuracy=1),\n                     breaks=c(.5,1),\n                     sec.axis=dup_axis(breaks=c(.804,.827,.853),\n                                       labels=c(\"+22\",\"+12\",\"+24\"))) +\n  theme(legend.position=\"none\",\n        axis.text.y.left=element_blank()) +\n  labs(x=\"\",\n       y=\"\",\n       caption=\"Proportion reporting fair or high\\nunderstanding of others' situation\")\n\n\n\n\n\n\n\n\nNote further the use of secondary axis breaks to illustrate the change score for each trendline from baseline to endline.\nThe R computing language allows for several ways to customize the use of labels in statistical or descriptive graphics. This short demo has illustrated MSI’s use of the geomtextpath package to place labels directly along the line or curve of a plot. This illustration used only straight lines between two points in time. For additional use cases of the geomtextpath package, see the package vignette.\n\n\nGantt charts\nSometimes it can be helpful to incorporate a more visual presentation of Gantt charts into our planning documents and client communications. The following table is an example of a simplified Gantt that was extracted from a larger Gantt from for the purposes of identifying the specific areas that could be subject to monitoring or evaluation activities.\n\ngantt &lt;- read_excel(\"data/short demo series/aqbe - GANTT.xlsx\")\n\ngantt %&gt;%\n  flextable()\n\nnumactActivityCohortClimate zoneLabelLabel2Label3Label4StartFinish11.1.2Professional development instruments and models35 Master Trainers and 7 Teacher Educators trained35 Master Trainers and 7 Teacher Educators trained35 Master Trainers352024-11-01 00:00:002025-01-01 00:00:0021.1.4Teachers trained on UNICEF Package1WarmCohort 1, Year 1, Warm Climate400 CBE / 2,625 teachers trained400 CBE / 2,625 teachers30252024-05-01 00:00:002024-09-01 00:00:0031.1.4Teachers trained on UNICEF Package1ColdCohort 1, Year 2, Cold Climate400 CBE / 2,625 teachers trained400 CBE / 2,625 teachers30252024-12-01 00:00:002025-04-01 00:00:0041.1.4Teachers trained on UNICEF Package2WarmCohort 2, Year 3, Warm Climate400 CBE / 2,625 teachers trained400 CBE / 2,625 teachers30252026-05-01 00:00:002026-09-01 00:00:0051.1.4Teachers trained on UNICEF Package2ColdCohort 2, Year 4, Cold Climate400 CBE / 2,625 teachers trained400 CBE / 2,625 teachers30252026-12-01 00:00:002027-04-01 00:00:0061.1.8Teacher-learner materials1WarmCohort 1, Year 1, Warm Climate2,625 teachers / 52,500 students2,625 teachers / 52,500 students2,625 T / 52,500 S2024-05-01 00:00:002024-09-01 00:00:0071.1.8Teacher-learner materials1ColdCohort 1, Year 2, Cold Climate2,625 teachers / 52,500 students2,625 teachers / 52,500 students2,625 T / 52,500 S2024-12-01 00:00:002025-04-01 00:00:0081.1.8Teacher-learner materials2WarmCohort 2, Year 3, Warm Climate2,625 teachers / 52,500 students2,625 teachers / 52,500 students2,625 T / 52,500 S2026-05-01 00:00:002026-09-01 00:00:0091.1.8Teacher-learner materials2ColdCohort 2, Year 4, Cold Climate2,625 teachers / 52,500 students2,625 teachers / 52,500 students2,625 T / 52,500 S2026-12-01 00:00:002027-04-01 00:00:00101.2.1Targeted remediation1WarmCohort 1, Year 21,050 teachers / 10,500 students1,050 teachers / 10,500 students1,050 T / 10,500 S2024-10-01 00:00:002025-10-01 00:00:00111.2.1Targeted remediation2ColdCohort 2, Year 41,050 teachers / 10,500 students1,050 teachers / 10,500 students1,050 T / 10,500 S2026-10-01 00:00:002027-10-01 00:00:00\n\n\nTo visualize this as a Gantt chart using the ggplot package in R, we first need to stack the dates in rows rather than columns. Note that R and ggplot usually prefer to work with data in long format (stacked rows) rather than wide format (variable values as columns).\n\ngant2 &lt;- gantt %&gt;%\n  pivot_longer(10:11,\n               names_to=\"Type\",\n               values_to=\"Date\")\n\ngant2 %&gt;%\n  flextable()\n\nnumactActivityCohortClimate zoneLabelLabel2Label3Label4TypeDate11.1.2Professional development instruments and models35 Master Trainers and 7 Teacher Educators trained35 Master Trainers and 7 Teacher Educators trained35 Master Trainers35Start2024-11-01 00:00:0011.1.2Professional development instruments and models35 Master Trainers and 7 Teacher Educators trained35 Master Trainers and 7 Teacher Educators trained35 Master Trainers35Finish2025-01-01 00:00:0021.1.4Teachers trained on UNICEF Package1WarmCohort 1, Year 1, Warm Climate400 CBE / 2,625 teachers trained400 CBE / 2,625 teachers3025Start2024-05-01 00:00:0021.1.4Teachers trained on UNICEF Package1WarmCohort 1, Year 1, Warm Climate400 CBE / 2,625 teachers trained400 CBE / 2,625 teachers3025Finish2024-09-01 00:00:0031.1.4Teachers trained on UNICEF Package1ColdCohort 1, Year 2, Cold Climate400 CBE / 2,625 teachers trained400 CBE / 2,625 teachers3025Start2024-12-01 00:00:0031.1.4Teachers trained on UNICEF Package1ColdCohort 1, Year 2, Cold Climate400 CBE / 2,625 teachers trained400 CBE / 2,625 teachers3025Finish2025-04-01 00:00:0041.1.4Teachers trained on UNICEF Package2WarmCohort 2, Year 3, Warm Climate400 CBE / 2,625 teachers trained400 CBE / 2,625 teachers3025Start2026-05-01 00:00:0041.1.4Teachers trained on UNICEF Package2WarmCohort 2, Year 3, Warm Climate400 CBE / 2,625 teachers trained400 CBE / 2,625 teachers3025Finish2026-09-01 00:00:0051.1.4Teachers trained on UNICEF Package2ColdCohort 2, Year 4, Cold Climate400 CBE / 2,625 teachers trained400 CBE / 2,625 teachers3025Start2026-12-01 00:00:0051.1.4Teachers trained on UNICEF Package2ColdCohort 2, Year 4, Cold Climate400 CBE / 2,625 teachers trained400 CBE / 2,625 teachers3025Finish2027-04-01 00:00:0061.1.8Teacher-learner materials1WarmCohort 1, Year 1, Warm Climate2,625 teachers / 52,500 students2,625 teachers / 52,500 students2,625 T / 52,500 SStart2024-05-01 00:00:0061.1.8Teacher-learner materials1WarmCohort 1, Year 1, Warm Climate2,625 teachers / 52,500 students2,625 teachers / 52,500 students2,625 T / 52,500 SFinish2024-09-01 00:00:0071.1.8Teacher-learner materials1ColdCohort 1, Year 2, Cold Climate2,625 teachers / 52,500 students2,625 teachers / 52,500 students2,625 T / 52,500 SStart2024-12-01 00:00:0071.1.8Teacher-learner materials1ColdCohort 1, Year 2, Cold Climate2,625 teachers / 52,500 students2,625 teachers / 52,500 students2,625 T / 52,500 SFinish2025-04-01 00:00:0081.1.8Teacher-learner materials2WarmCohort 2, Year 3, Warm Climate2,625 teachers / 52,500 students2,625 teachers / 52,500 students2,625 T / 52,500 SStart2026-05-01 00:00:0081.1.8Teacher-learner materials2WarmCohort 2, Year 3, Warm Climate2,625 teachers / 52,500 students2,625 teachers / 52,500 students2,625 T / 52,500 SFinish2026-09-01 00:00:0091.1.8Teacher-learner materials2ColdCohort 2, Year 4, Cold Climate2,625 teachers / 52,500 students2,625 teachers / 52,500 students2,625 T / 52,500 SStart2026-12-01 00:00:0091.1.8Teacher-learner materials2ColdCohort 2, Year 4, Cold Climate2,625 teachers / 52,500 students2,625 teachers / 52,500 students2,625 T / 52,500 SFinish2027-04-01 00:00:00101.2.1Targeted remediation1WarmCohort 1, Year 21,050 teachers / 10,500 students1,050 teachers / 10,500 students1,050 T / 10,500 SStart2024-10-01 00:00:00101.2.1Targeted remediation1WarmCohort 1, Year 21,050 teachers / 10,500 students1,050 teachers / 10,500 students1,050 T / 10,500 SFinish2025-10-01 00:00:00111.2.1Targeted remediation2ColdCohort 2, Year 41,050 teachers / 10,500 students1,050 teachers / 10,500 students1,050 T / 10,500 SStart2026-10-01 00:00:00111.2.1Targeted remediation2ColdCohort 2, Year 41,050 teachers / 10,500 students1,050 teachers / 10,500 students1,050 T / 10,500 SFinish2027-10-01 00:00:00\n\n\nNow we can plot the dates on the x-axis and the activity on the y-axis (ordered by the index variable). Our geom will be a line, and an additional aesthetic will be to color the lines by one of our labels.\n\nggplot(gant2, aes(Date, fct_rev(fct_reorder(Activity,num)), color=Label)) +\n  geom_line(linewidth=5) +\n#  geom_label(aes(label=Label4)) +\n  scale_x_datetime(limits=c(as.POSIXct(\"2024-02-01\"), as.POSIXct(\"2027-09-01\")),\n                   date_breaks=\"6 months\",\n                   #date_breaks=\"17 days\",\n                   date_labels=\"%b-%y\") +\n  #, date_labels=c(\"June 7\",\"21\",\"Jul 5\",\"19\",\"Aug 2\",\"16\",\"30\",\"Sep 13\",\"27\",\"Oct 11\")) +\n  scale_y_discrete(labels=label_wrap(25)) +\n  scale_color_viridis_d() +\n  labs(x=\"\",\n       y=\"\") +\n  theme(legend.position=\"none\",\n        legend.title=element_blank())\n\nWarning: Removed 1 row containing missing values or values outside the scale range\n(`geom_line()`).\n\n\n\n\n\n\n\n\n\nThis Gantt is more visually appealing, and still retains utility in highlighting what activities occur and when. Note that we have suppressed the legend created by the color aesthetic, but we could have kept it in order to communicate additional information.\nAdditional resources:\nSimple Gantt charts in R with ggplot2 … and Microsoft Excel\nGantt charts using ggplott and Plotly\nR Shiny Gantt Chart\nHow to Create a Gantt Chart in R Using ggplot2\nHappy Gantting!",
+    "crumbs": [
+      "Data Analysis",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Data exploration</span>"
+    ]
+  },
+  {
+    "objectID": "Data exploration.html#read-in-the-data",
+    "href": "Data exploration.html#read-in-the-data",
+    "title": "Data exploration",
+    "section": "Read in the data",
+    "text": "Read in the data\n\n#It is a csv file so I use the read_csv function and provide the file path\ncities &lt;- read_csv(here::here(\"../methods corner/Map demo/data/Madagascar_Cities.csv\")\n                   , show_col_types = FALSE)\n\n#Observe the first few rows of data\nDT::datatable(head(cities))\n\n\n\n\n\nNow, for the administrative boundaries. Each of these are being read in using gadm() from the geodata package and then converted to an sf object with the st_as_sf() function. In the example, we download only the country boundary, but if we wanted regions or departments, we would simply change the level argument inside the gadm() function call to a 1 or a 2.",
+    "crumbs": [
+      "Data Analysis",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Data exploration</span>"
+    ]
+  },
+  {
+    "objectID": "Data exploration.html#country-boundary",
+    "href": "Data exploration.html#country-boundary",
+    "title": "Data exploration",
+    "section": "Country boundary",
+    "text": "Country boundary\n\n#This is only the country boundary. \nmdg &lt;- geodata::gadm(country = \"MDG\"\n                  , level = 0\n                  , path = tempdir()) |&gt;\n  st_as_sf()",
+    "crumbs": [
+      "Data Analysis",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Data exploration</span>"
+    ]
+  },
+  {
+    "objectID": "Data exploration.html#convert-the-cities-to-an-sf-object",
+    "href": "Data exploration.html#convert-the-cities-to-an-sf-object",
+    "title": "Data exploration",
+    "section": "Convert the cities to an sf object",
+    "text": "Convert the cities to an sf object\nRemember that the cities object is a standard .csv with longitude and latitude columns, but it is not yet recognized as an sf object that has geographic properties. Here is how to convert it to an sf object with a single geometry column and a crs.\n\ncities_sf &lt;- cities |&gt;\n  st_as_sf(coords = c(\"Longitude\", \"Latitude\")\n           , crs = 4326)\n\n#observe the first few rows of data\nDT::datatable(head(cities_sf))",
+    "crumbs": [
+      "Data Analysis",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Data exploration</span>"
+    ]
+  },
+  {
+    "objectID": "Data exploration.html#make-the-map",
+    "href": "Data exploration.html#make-the-map",
+    "title": "Data exploration",
+    "section": "Make the map",
+    "text": "Make the map\nThe following code chunks and tabs walk through the process of making and improving a map in both tmap and ggplot2. In the example, cities are what we are plotting, but we could be plotting any variable of a dataset.\n\ntmapggplot2\n\n\n\ntmap_mode(\"plot\") +\n  tm_shape(mdg) +\n  tm_polygons() + #for only the borders, use tm_borders()\n  tm_shape(cities_sf) +\n  tm_dots(size = .25, col = \"red\")\n\n\n\n\n\n\n\n\n\n\n\nggplot2::ggplot(mdg) +\n  geom_sf() +\n  geom_sf(data = cities_sf, color = \"red\")",
+    "crumbs": [
+      "Data Analysis",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Data exploration</span>"
+    ]
+  },
+  {
+    "objectID": "Data exploration.html#make-the-map-better",
+    "href": "Data exploration.html#make-the-map-better",
+    "title": "Data exploration",
+    "section": "Make the map better",
+    "text": "Make the map better\n\ntmapggplot2\n\n\n\n#the city names are long so we have to \n# make a bigger window to fit them. This isn't part of the normal process\n#make an object with the current bounding box\nbbox_new &lt;- st_bbox(mdg)\n\n#calculate the x and y ranges of the bbox\nxrange &lt;- bbox_new$xmax - bbox_new$xmin # range of x values\nyrange &lt;- bbox_new$ymax - bbox_new$ymin # range of y values\n\n#provide the new values for the 4 corners of the bbox\n  bbox_new[1] &lt;- bbox_new[1] - (0.7 * xrange) # xmin - left\n  bbox_new[3] &lt;- bbox_new[3] + (0.75 * xrange) # xmax - right\n  bbox_new[2] &lt;- bbox_new[2] - (0.1 * yrange) # ymin - bottom\n  bbox_new[4] &lt;- bbox_new[4] + (0.1 * yrange) # ymax - top\n\n#convert the bbox to a sf collection (sfc)\nbbox_new &lt;- bbox_new |&gt;  # take the bounding box ...\n  st_as_sfc() # ... and make it a sf polygon\n\n#now plot the map\ntmap_mode(\"plot\") +\n  tm_shape(mdg, bbox = bbox_new) +\n  tm_polygons() +\n  tm_shape(cities_sf) +\n  tm_dots(size = .25, col = \"red\") +\n  tm_text(text = \"Name\", auto.placement = T) +\n  tm_layout(title = \"Main Cities of\\nMadagascar\")\n\n\n\n\n\n\n\n\n\n\n\n#the city names are long so we have to \n# make a bigger window to fit them. This isn't part of the normal process\n#make an object with the current bounding box\nbbox_new &lt;- st_bbox(mdg)\n\n#calculate the x and y ranges of the bbox\nxrange &lt;- bbox_new$xmax - bbox_new$xmin # range of x values\nyrange &lt;- bbox_new$ymax - bbox_new$ymin # range of y values\n\n#provide the new values for the 4 corners of the bbox\n  bbox_new[1] &lt;- bbox_new[1] - (0.5 * xrange) # xmin - left\n  bbox_new[3] &lt;- bbox_new[3] + (0.5 * xrange) # xmax - right\n  bbox_new[2] &lt;- bbox_new[2] - (0.1 * yrange) # ymin - bottom\n  bbox_new[4] &lt;- bbox_new[4] + (0.1 * yrange) # ymax - top\n\n#convert the bbox to a sf collection (sfc)\nbbox_new &lt;- bbox_new |&gt;  # take the bounding box\n  st_as_sfc() # ... and make it a sf polygon\n\n\nggplot2::ggplot() +\n  geom_sf(data = mdg) +\n  geom_sf(data = cities_sf, color = \"red\") +\n  ggrepel::geom_text_repel(data = cities_sf\n               , aes(label = Name\n                     , geometry = geometry)\n               , stat = \"sf_coordinates\"\n               , min.segment.length = 0) +\n  coord_sf(xlim = st_coordinates(bbox_new)[c(1,2),1], # min & max of x values\n           ylim = st_coordinates(bbox_new)[c(2,3),2]) + # min & max of y values +\n  labs(title = \"Main Cities of\\nMadagascar\") +\n  theme_void()",
+    "crumbs": [
+      "Data Analysis",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Data exploration</span>"
+    ]
+  },
+  {
+    "objectID": "Data exploration.html#final-touches",
+    "href": "Data exploration.html#final-touches",
+    "title": "Data exploration",
+    "section": "Final touches",
+    "text": "Final touches\nNow that we have a map with cities plotted (we achieved our goal!), we will add a few finishing touches and set the size of the city points to the population variable in the original dataset.\nAdditionally, tmap provides a simple interface to go from a static map to an interative map simply by changing tmap_mode(\"plot\") to tmap_mode(\"view\").\n\ntmapggplot2tmap interactive\n\n\n\n#the city names are long so we have to \n# make a bigger window to fit them. This isn't part of the normal process\n#make an object with the current bounding box\nbbox_new &lt;- st_bbox(mdg)\n\n#calculate the x and y ranges of the bbox\nxrange &lt;- bbox_new$xmax - bbox_new$xmin # range of x values\nyrange &lt;- bbox_new$ymax - bbox_new$ymin # range of y values\n\n#provide the new values for the 4 corners of the bbox\n  bbox_new[1] &lt;- bbox_new[1] - (0.7 * xrange) # xmin - left\n  bbox_new[3] &lt;- bbox_new[3] + (0.75 * xrange) # xmax - right\n  bbox_new[2] &lt;- bbox_new[2] - (0.1 * yrange) # ymin - bottom\n  bbox_new[4] &lt;- bbox_new[4] + (0.1 * yrange) # ymax - top\n\n#convert the bbox to a sf collection (sfc)\nbbox_new &lt;- bbox_new |&gt;  # take the bounding box ...\n  st_as_sfc() # ... and make it a sf polygon\ntmap_mode(\"plot\") +\n  tm_shape(mdg, bbox = bbox_new) +\n  tm_polygons() +\n  tm_shape(cities_sf) +\n  tm_dots(size = \"Population\", col = \"red\"\n          , legend.size.is.portrait = TRUE) +\n  tm_text(text = \"Name\", auto.placement = T\n          , along.lines = T) +\n  tm_scale_bar(position = c(\"left\", \"bottom\"), width = 0.15) +\n  tm_compass(type = \"4star\"\n             , position = c(\"right\", \"bottom\")\n             , size = 2) +\n  tm_layout(main.title = \"Main Cities of Madagascar\"                         , legend.outside = TRUE)\n\n\n\n\n\n\n\n\n\n\n\nggplot2::ggplot() +\n  geom_sf(data = mdg) +\n  geom_sf(data = cities_sf, aes(size = Population)\n          , color = \"red\") +\n  ggrepel::geom_text_repel(data = cities_sf\n               , aes(label = Name\n                     , geometry = geometry)\n               , stat = \"sf_coordinates\"\n               , min.segment.length = 0) +\n  coord_sf(xlim = st_coordinates(bbox_new)[c(1,2),1], # min & max of x values\n           ylim = st_coordinates(bbox_new)[c(2,3),2]) + # min & max of y values +\n  ggspatial::annotation_scale(location = \"bl\") +\n  ggspatial::annotation_north_arrow(location = \"br\"\n                                    , which_north = \"true\"\n                                    , size = 1)+\n  labs(title = \"Main Cities of Madagascar\") +\n  theme_void()\n\n\n\n\n\n\n\n\n\n\n\ntmap_mode(\"view\") +\n  tm_shape(mdg) +\n  tm_borders() +\n  tm_shape(cities_sf) +\n  tm_dots(size = \"Population\", col = \"red\"\n          , legend.size.is.portrait = TRUE) +\n  tm_text(text = \"Name\", auto.placement = T\n          , along.lines = T) +\n  tm_scale_bar(position = c(\"left\", \"bottom\"), width = 0.15) +\n  tm_compass(type = \"4star\"\n             , position = c(\"right\", \"bottom\")\n             , size = 2) +\n  tm_layout(main.title = \"Main Cities of Madagascar\"                         , legend.outside = TRUE)",
+    "crumbs": [
+      "Data Analysis",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Data exploration</span>"
+    ]
+  },
+  {
+    "objectID": "Data exploration.html#additional-resources",
+    "href": "Data exploration.html#additional-resources",
+    "title": "Data exploration",
+    "section": "Additional Resources",
+    "text": "Additional Resources\nFor those interested in mapping in R (or QGIS) there are many free resources available online. A great starting point for R is the online text book, Geocomputation with R. If you would rather learn more in Python, Geocomputation with Python is a great resource.",
+    "crumbs": [
+      "Data Analysis",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Data exploration</span>"
+    ]
+  }
+]
