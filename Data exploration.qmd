@@ -161,10 +161,13 @@ Note further the use of secondary axis breaks to illustrate the change score for
 
 The R computing language allows for several ways to customize the use of labels in statistical or descriptive graphics. This short demo has illustrated MSI's use of the geomtextpath package to place labels directly along the line or curve of a plot. This illustration used only straight lines between two points in time. For additional use cases of the geomtextpath package, see the package [vignette](https://cran.r-project.org/web/packages/geomtextpath/vignettes/geomtextpath.html).
 
-
 ### Gantt charts
 
+<<<<<<< HEAD
 Sometimes it can be helpful to incorporate a more visual presentation of Gantt charts into our planning documents and client communications. The following table is an example of a simplified Gantt that was extracted from a larger Gantt for the purposes of identifying the specific areas that could be subject to monitoring or evaluation activities. 
+=======
+Sometimes it can be helpful to incorporate a more visual presentation of Gantt charts into our planning documents and client communications. The following table is an example of a simplified Gantt that was extracted from a larger Gantt from for the purposes of identifying the specific areas that could be subject to monitoring or evaluation activities.
+>>>>>>> 905a8df01de565f0b344485bfb83736cd9e10761
 
 ```{r}
 gantt <- read_excel("data/short demo series/aqbe - GANTT.xlsx")
@@ -174,7 +177,7 @@ gantt %>%
 
 ```
 
-To visualize this as a Gantt chart using the ggplot package in R, we first need to stack the dates in rows rather than columns. Note that R and ggplot usually prefer to work with data in long format (stacked rows) rather than wide format (variable values as columns). 
+To visualize this as a Gantt chart using the ggplot package in R, we first need to stack the dates in rows rather than columns. Note that R and ggplot usually prefer to work with data in long format (stacked rows) rather than wide format (variable values as columns).
 
 ```{r}
 gant2 <- gantt %>%
@@ -187,7 +190,7 @@ gant2 %>%
 
 ```
 
-Now we can plot the dates on the x-axis and the activity on the y-axis (ordered by the index variable). Our geom will be a line, and an additional aesthetic will be to color the lines by one of our labels. 
+Now we can plot the dates on the x-axis and the activity on the y-axis (ordered by the index variable). Our geom will be a line, and an additional aesthetic will be to color the lines by one of our labels.
 
 ```{r}
 
@@ -210,9 +213,9 @@ ggplot(gant2, # the data to use
 
 ```
 
-This Gantt is more visually appealing, and still retains utility in highlighting what activities occur and when. Note that we have suppressed the legend created by the color aesthetic, but we could have kept it in order to communicate additional information. 
+This Gantt is more visually appealing, and still retains utility in highlighting what activities occur and when. Note that we have suppressed the legend created by the color aesthetic, but we could have kept it in order to communicate additional information.
 
-Additional resources: 
+Additional resources:
 
 [Simple Gantt charts in R with ggplot2 ... and Microsoft Excel](https://www.molecularecologist.com/2019/01/03/simple-gantt-charts-in-r-with-ggplot2-and-the-tidyverse/)
 
@@ -223,7 +226,6 @@ Additional resources:
 [How to Create a Gantt Chart in R Using ggplot2](https://www.statology.org/gantt-chart-r-ggplot2/)
 
 Happy Gantting!
-
 
 # Mapping
 

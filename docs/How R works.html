@@ -2,7 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
+<<<<<<< HEAD
 <meta name="generator" content="quarto-1.4.554">
+=======
+<meta name="generator" content="quarto-1.4.555">
+>>>>>>> 905a8df01de565f0b344485bfb83736cd9e10761
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -495,7 +499,11 @@ $ d &lt;lgl&gt; TRUE, FALSE, TRUE, FALSE</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code>a
  1  2 
+<<<<<<< HEAD
 51 49 </code></pre>
+=======
+49 51 </code></pre>
+>>>>>>> 905a8df01de565f0b344485bfb83736cd9e10761
 </div>
 </div>
 <div class="cell">
@@ -504,24 +512,57 @@ $ d &lt;lgl&gt; TRUE, FALSE, TRUE, FALSE</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code>a_f
   Male Female 
+<<<<<<< HEAD
     51     49 </code></pre>
+=======
+    49     51 </code></pre>
+>>>>>>> 905a8df01de565f0b344485bfb83736cd9e10761
 </div>
 </div>
 <p>Note that the labels are just labels, the underlying representation is still 1 and 2.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(a_f)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
+<<<<<<< HEAD
 <pre><code> Factor w/ 2 levels "Male","Female": 2 2 1 2 1 1 2 2 2 1 ...</code></pre>
+=======
+<pre><code> Factor w/ 2 levels "Male","Female": 2 1 1 1 2 1 1 2 1 2 ...</code></pre>
+>>>>>>> 905a8df01de565f0b344485bfb83736cd9e10761
 </div>
 </div>
 <p>Factors can sometimes cause trouble. More contemporary practice is to stick with an integer data type and add your own labels.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
+<<<<<<< HEAD
 <pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.1.4     ✔ readr     2.1.5
 ✔ forcats   1.0.0     ✔ stringr   1.5.1
 ✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+=======
+<pre><code>Warning: package 'tidyverse' was built under R version 4.3.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'tidyr' was built under R version 4.3.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'readr' was built under R version 4.3.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'purrr' was built under R version 4.3.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'dplyr' was built under R version 4.3.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'lubridate' was built under R version 4.3.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.0
+✔ ggplot2   3.4.3     ✔ tibble    3.2.1
+>>>>>>> 905a8df01de565f0b344485bfb83736cd9e10761
 ✔ lubridate 1.9.3     ✔ tidyr     1.3.1
 ✔ purrr     1.0.2     
 ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
@@ -529,7 +570,14 @@ $ d &lt;lgl&gt; TRUE, FALSE, TRUE, FALSE</code></pre>
 ✖ dplyr::lag()    masks stats::lag()
 ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 </div>
+<<<<<<< HEAD
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sjmisc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+=======
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sjmisc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'sjmisc' was built under R version 4.3.3</code></pre>
+</div>
+>>>>>>> 905a8df01de565f0b344485bfb83736cd9e10761
 <div class="cell-output cell-output-stderr">
 <pre><code>
 Attaching package: 'sjmisc'
@@ -546,7 +594,14 @@ The following object is masked from 'package:tibble':
 
     add_case</code></pre>
 </div>
+<<<<<<< HEAD
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sjlabelled)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+=======
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sjlabelled)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'sjlabelled' was built under R version 4.3.3</code></pre>
+</div>
+>>>>>>> 905a8df01de565f0b344485bfb83736cd9e10761
 <div class="cell-output cell-output-stderr">
 <pre><code>
 Attaching package: 'sjlabelled'
@@ -563,16 +618,25 @@ The following object is masked from 'package:ggplot2':
 
     as_label</code></pre>
 </div>
+<<<<<<< HEAD
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>a_l <span class="ot">&lt;-</span> a <span class="sc">%&gt;%</span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_labels</span>(<span class="at">labels=</span><span class="fu">c</span>(<span class="st">"Male"</span>,<span class="st">"Female"</span>))</span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(a_l)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> int [1:100] 2 2 1 2 1 1 2 2 2 1 ...
+=======
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>a_l <span class="ot">&lt;-</span> a <span class="sc">%&gt;%</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_labels</span>(<span class="at">labels=</span><span class="fu">c</span>(<span class="st">"Male"</span>,<span class="st">"Female"</span>))</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(a_l)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> int [1:100] 2 1 1 1 2 1 1 2 1 2 ...
+>>>>>>> 905a8df01de565f0b344485bfb83736cd9e10761
  - attr(*, "labels")= Named num [1:2] 1 2
   ..- attr(*, "names")= chr [1:2] "Male" "Female"</code></pre>
 </div>
 </div>
 <div class="cell">
+<<<<<<< HEAD
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>x &lt;integer&gt; 
@@ -582,10 +646,22 @@ Value |  N | Raw % | Valid % | Cum. %
 -------------------------------------
     1 | 51 |    51 |      51 |     51
     2 | 49 |    49 |      49 |    100
+=======
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>x &lt;integer&gt; 
+# total N=100 valid N=100 mean=1.51 sd=0.50
+
+Value |  N | Raw % | Valid % | Cum. %
+-------------------------------------
+    1 | 49 |    49 |      49 |     49
+    2 | 51 |    51 |      51 |    100
+>>>>>>> 905a8df01de565f0b344485bfb83736cd9e10761
  &lt;NA&gt; |  0 |     0 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 <div class="cell">
+<<<<<<< HEAD
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(a_f)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>x &lt;categorical&gt; 
@@ -595,10 +671,22 @@ Value  |  N | Raw % | Valid % | Cum. %
 --------------------------------------
 Male   | 51 |    51 |      51 |     51
 Female | 49 |    49 |      49 |    100
+=======
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(a_f)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>x &lt;categorical&gt; 
+# total N=100 valid N=100 mean=1.51 sd=0.50
+
+Value  |  N | Raw % | Valid % | Cum. %
+--------------------------------------
+Male   | 49 |    49 |      49 |     49
+Female | 51 |    51 |      51 |    100
+>>>>>>> 905a8df01de565f0b344485bfb83736cd9e10761
 &lt;NA&gt;   |  0 |     0 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 <div class="cell">
+<<<<<<< HEAD
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(a_l)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>x &lt;integer&gt; 
@@ -608,11 +696,23 @@ Value |  Label |  N | Raw % | Valid % | Cum. %
 ----------------------------------------------
     1 |   Male | 51 |    51 |      51 |     51
     2 | Female | 49 |    49 |      49 |    100
+=======
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(a_l)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>x &lt;integer&gt; 
+# total N=100 valid N=100 mean=1.51 sd=0.50
+
+Value |  Label |  N | Raw % | Valid % | Cum. %
+----------------------------------------------
+    1 |   Male | 49 |    49 |      49 |     49
+    2 | Female | 51 |    51 |      51 |    100
+>>>>>>> 905a8df01de565f0b344485bfb83736cd9e10761
  &lt;NA&gt; |   &lt;NA&gt; |  0 |     0 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
 <p>The underlying integers behind factor labels have no ordering. To establish an ordering, make an ordered factor.</p>
 <div class="cell">
+<<<<<<< HEAD
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>ord <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">100</span>, <span class="at">replace=</span>T)</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ord)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -629,11 +729,30 @@ Value |  Label |  N | Raw % | Valid % | Cum. %
 <pre><code>ord.fac
 Not at all   A little   Somewhat       Much Completely 
         19         18         20         14         29 </code></pre>
+=======
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>ord <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">100</span>, <span class="at">replace=</span>T)</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ord)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>ord
+ 1  2  3  4  5 
+29 23 12 17 19 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>ord.labs <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Not at all"</span>,<span class="st">"A little"</span>,<span class="st">"Somewhat"</span>,<span class="st">"Much"</span>,<span class="st">"Completely"</span>)</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>ord.fac <span class="ot">&lt;-</span> <span class="fu">ordered</span>(ord, <span class="at">labels=</span>ord.labs)</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ord.fac)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>ord.fac
+Not at all   A little   Somewhat       Much Completely 
+        29         23         12         17         19 </code></pre>
+>>>>>>> 905a8df01de565f0b344485bfb83736cd9e10761
 </div>
 </div>
 <p>But again, you have to be careful not to accidentally jumble the underlying integers with the ordered labels.</p>
 <p>To keep things more explicit, I would still stick with an integer variable with labels, rather than an ordered factor.</p>
 <div class="cell">
+<<<<<<< HEAD
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>ord.l <span class="ot">&lt;-</span> ord <span class="sc">%&gt;%</span></span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_labels</span>(<span class="at">labels=</span>ord.labs)</span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ord.l)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -656,6 +775,30 @@ Value |      Label |  N | Raw % | Valid % | Cum. %
     3 |   Somewhat | 20 | 20.00 |   20.00 |  57.00
     4 |       Much | 14 | 14.00 |   14.00 |  71.00
     5 | Completely | 29 | 29.00 |   29.00 | 100.00
+=======
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>ord.l <span class="ot">&lt;-</span> ord <span class="sc">%&gt;%</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_labels</span>(<span class="at">labels=</span>ord.labs)</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ord.l)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>ord.l
+ 1  2  3  4  5 
+29 23 12 17 19 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(ord.l)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>x &lt;integer&gt; 
+# total N=100 valid N=100 mean=2.74 sd=1.51
+
+Value |      Label |  N | Raw % | Valid % | Cum. %
+--------------------------------------------------
+    1 | Not at all | 29 | 29.00 |   29.00 |  29.00
+    2 |   A little | 23 | 23.00 |   23.00 |  52.00
+    3 |   Somewhat | 12 | 12.00 |   12.00 |  64.00
+    4 |       Much | 17 | 17.00 |   17.00 |  81.00
+    5 | Completely | 19 | 19.00 |   19.00 | 100.00
+>>>>>>> 905a8df01de565f0b344485bfb83736cd9e10761
  &lt;NA&gt; |       &lt;NA&gt; |  0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
@@ -672,6 +815,7 @@ Value |      Label |  N | Raw % | Valid % | Cum. %
 <section id="sub-setting-vectors" class="level3">
 <h3 class="anchored" data-anchor-id="sub-setting-vectors">sub-setting vectors</h3>
 <div class="cell">
+<<<<<<< HEAD
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">rpois</span>(<span class="dv">5</span>, <span class="dv">8</span>)</span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -700,6 +844,36 @@ Value |      Label |  N | Raw % | Valid % | Cum. %
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>a[a<span class="sc">&gt;</span><span class="dv">9</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 10</code></pre>
+=======
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">rpois</span>(<span class="dv">5</span>, <span class="dv">8</span>)</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  5 11 12  9 10</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>a[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  5 11 12</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>a[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">2</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  5  9 11</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>a[<span class="sc">-</span><span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  5 12  9 10</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>a[a<span class="sc">&gt;</span><span class="dv">9</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 11 12 10</code></pre>
+>>>>>>> 905a8df01de565f0b344485bfb83736cd9e10761
 </div>
 </div>
 </section>
@@ -707,7 +881,11 @@ Value |      Label |  N | Raw % | Valid % | Cum. %
 <h3 class="anchored" data-anchor-id="sub-setting-data-frames">sub-setting data frames</h3>
 <p>Since data frames are two dimensional, you usually (but not always) need to specify both dimensions.</p>
 <div class="cell">
+<<<<<<< HEAD
 <div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+=======
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+>>>>>>> 905a8df01de565f0b344485bfb83736cd9e10761
 <div class="cell-output cell-output-stdout">
 <pre><code>'data.frame':   4 obs. of  4 variables:
  $ a: num  10 20 30 40
@@ -717,8 +895,13 @@ Value |      Label |  N | Raw % | Valid % | Cum. %
 </div>
 </div>
 <div class="cell">
+<<<<<<< HEAD
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>df_f <span class="ot">&lt;-</span> df[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,<span class="dv">2</span>]</span>
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(df_f)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+=======
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>df_f <span class="ot">&lt;-</span> df[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,<span class="dv">2</span>]</span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(df_f)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+>>>>>>> 905a8df01de565f0b344485bfb83736cd9e10761
 <div class="cell-output cell-output-stdout">
 <pre><code> chr [1:5] "book" "pen" "textbook" "pencil_case" NA</code></pre>
 </div>
