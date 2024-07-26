@@ -164,7 +164,7 @@ The R computing language allows for several ways to customize the use of labels 
 
 ### Gantt charts
 
-Sometimes it can be helpful to incorporate a more visual presentation of Gantt charts into our planning documents and client communications. The following table is an example of a simplified Gantt that was extracted from a larger Gantt from for the purposes of identifying the specific areas that could be subject to monitoring or evaluation activities. 
+Sometimes it can be helpful to incorporate a more visual presentation of Gantt charts into our planning documents and client communications. The following table is an example of a simplified Gantt that was extracted from a larger Gantt for the purposes of identifying the specific areas that could be subject to monitoring or evaluation activities. 
 
 ```{r}
 gantt <- read_excel("data/short demo series/aqbe - GANTT.xlsx")
@@ -178,9 +178,9 @@ To visualize this as a Gantt chart using the ggplot package in R, we first need 
 
 ```{r}
 gant2 <- gantt %>%
-  pivot_longer(10:11,
-               names_to="Type",
-               values_to="Date")
+  pivot_longer(10:11, # the date columns to pivot
+               names_to="Type", # collapse the Start and Finish variables into a single variable
+               values_to="Date") # the values of the Start and Finish variables go here
 
 gant2 %>%
   flextable()
@@ -191,20 +191,22 @@ Now we can plot the dates on the x-axis and the activity on the y-axis (ordered 
 
 ```{r}
 
-ggplot(gant2, aes(Date, fct_rev(fct_reorder(Activity,num)), color=Label)) +
-  geom_line(size=5) +
-#  geom_label(aes(label=Label4)) +
-  scale_x_datetime(limits=c(as.POSIXct("2024-03-01"), as.POSIXct("2027-08-01")),
-                   date_breaks="6 months",
-                   #date_breaks="17 days",
-                   date_labels="%b-%y") +
-  #, date_labels=c("June 7","21","Jul 5","19","Aug 2","16","30","Sep 13","27","Oct 11")) +
-  scale_y_discrete(labels=label_wrap(25)) +
-  scale_color_viridis_d() +
-  labs(x="",
-       y="") +
-  theme(legend.position="none",
-        legend.title=element_blank())
+ggplot(gant2, # the data to use 
+       aes(Date, # x aesthetic
+           fct_reorder(Activity,num), # order the Activity aesthetic according to the num variable 
+           color=Label)) + # add an additional aesthetic
+  geom_line(linewidth=5) + # for every unique value of Activity, draw a line between the dates
+  scale_x_datetime(limits=c(as.POSIXct("2024-02-01"), as.POSIXct("2027-09-01")), # range of x-axis
+                   date_breaks="6 months", # how far apart to set the tick marks
+                   date_labels="%b-%y") + # format the tick labels to Mon-YY
+  scale_y_discrete(labels=label_wrap(25)) + # cuts a long y-axis label into two lines
+  scale_color_viridis_d() + # use a color-blind friendly palette
+  labs(x="", # no label
+       y="", # no label
+       title="Illustrative Gantt chart") + # figure title
+  theme(legend.position="none", # remove legend to declutter
+        plot.background = element_rect(fill = "aliceblue"), 
+        panel.background = element_rect(fill = "aliceblue"))
 
 ```
 
