@@ -606,7 +606,7 @@ still 1 and 2.
 \end{Shaded}
 
 \begin{verbatim}
- Factor w/ 2 levels "Male","Female": 1 2 2 2 1 2 2 2 1 1 ...
+ Factor w/ 2 levels "Male","Female": 2 1 1 1 2 1 1 1 1 1 ...
 \end{verbatim}
 
 Factors can sometimes cause trouble. More contemporary practice is to
@@ -686,7 +686,7 @@ The following object is masked from 'package:ggplot2':
 \end{Shaded}
 
 \begin{verbatim}
- int [1:100] 1 2 2 2 1 2 2 2 1 1 ...
+ int [1:100] 2 1 1 1 2 1 1 1 1 1 ...
  - attr(*, "labels")= Named num [1:2] 1 2
   ..- attr(*, "names")= chr [1:2] "Male" "Female"
 \end{verbatim}
@@ -755,7 +755,7 @@ establish an ordering, make an ordered factor.
 \begin{verbatim}
 ord
  1  2  3  4  5 
-20 22 18 16 24 
+19 16 14 27 24 
 \end{verbatim}
 
 \begin{Shaded}
@@ -769,7 +769,7 @@ ord
 \begin{verbatim}
 ord.fac
 Not at all   A little   Somewhat       Much Completely 
-        20         22         18         16         24 
+        19         16         14         27         24 
 \end{verbatim}
 
 But again, you have to be careful not to accidentally jumble the
@@ -789,7 +789,7 @@ variable with labels, rather than an ordered factor.
 \begin{verbatim}
 ord.l
  1  2  3  4  5 
-20 22 18 16 24 
+19 16 14 27 24 
 \end{verbatim}
 
 \begin{Shaded}
@@ -800,16 +800,16 @@ ord.l
 
 \begin{verbatim}
 x <integer> 
-# total N=100 valid N=100 mean=3.02 sd=1.47
+# total N=100 valid N=100 mean=3.21 sd=1.46
 
 Value |      Label |  N | Raw % | Valid % | Cum. %
 --------------------------------------------------
-    1 | Not at all | 20 |    20 |      20 |     20
-    2 |   A little | 22 |    22 |      22 |     42
-    3 |   Somewhat | 18 |    18 |      18 |     60
-    4 |       Much | 16 |    16 |      16 |     76
-    5 | Completely | 24 |    24 |      24 |    100
- <NA> |       <NA> |  0 |     0 |    <NA> |   <NA>
+    1 | Not at all | 19 | 19.00 |   19.00 |     19
+    2 |   A little | 16 | 16.00 |   16.00 |     35
+    3 |   Somewhat | 14 | 14.00 |   14.00 |     49
+    4 |       Much | 27 | 27.00 |   27.00 |     76
+    5 | Completely | 24 | 24.00 |   24.00 |    100
+ <NA> |       <NA> |  0 |  0.00 |    <NA> |   <NA>
 \end{verbatim}
 
 When you're ready to dive into this sometimes-frustrating subject, start
@@ -843,7 +843,7 @@ this is to use brackets.
 \end{Shaded}
 
 \begin{verbatim}
-[1] 10  5 15 10  3
+[1]  5  7  8  9 10
 \end{verbatim}
 
 \begin{Shaded}
@@ -853,7 +853,7 @@ this is to use brackets.
 \end{Shaded}
 
 \begin{verbatim}
-[1] 10  5 15
+[1] 5 7 8
 \end{verbatim}
 
 \begin{Shaded}
@@ -863,7 +863,7 @@ this is to use brackets.
 \end{Shaded}
 
 \begin{verbatim}
-[1] 10 10  5
+[1] 5 9 7
 \end{verbatim}
 
 \begin{Shaded}
@@ -873,7 +873,7 @@ this is to use brackets.
 \end{Shaded}
 
 \begin{verbatim}
-[1] 10 15 10  3
+[1]  5  8  9 10
 \end{verbatim}
 
 \begin{Shaded}
@@ -883,7 +883,7 @@ this is to use brackets.
 \end{Shaded}
 
 \begin{verbatim}
-[1] 10 15 10
+[1] 10
 \end{verbatim}
 
 \subsection{sub-setting data frames}\label{sub-setting-data-frames}
@@ -2141,12 +2141,12 @@ straight lines between two points in time. For additional use cases of
 the geomtextpath package, see the package
 \href{https://cran.r-project.org/web/packages/geomtextpath/vignettes/geomtextpath.html}{vignette}.
 
-\subsection{GANTT charts}\label{gantt-charts}
+\subsection{Gantt charts}\label{gantt-charts}
 
 Sometimes it can be helpful to incorporate a more visual presentation of
-GANTT charts into our planning documents and client communications. The
-following table is an example of a simplified GANTT that was extracted
-from a larger GANTT from for the purposes of identifying the specific
+Gantt charts into our planning documents and client communications. The
+following table is an example of a simplified Gantt that was extracted
+from a larger Gantt from for the purposes of identifying the specific
 areas that could be subject to monitoring or evaluation activities.
 
 \begin{Shaded}
@@ -2266,7 +2266,7 @@ areas that could be subject to monitoring or evaluation activities.
 
 \renewcommand*{\arraystretch}{1}
 
-To visualize this as a GANTT chart using the ggplot package in R, we
+To visualize this as a Gantt chart using the ggplot package in R, we
 first need to stack the dates in rows rather than columns. Note that R
 and ggplot usually prefer to work with data in long format (stacked
 rows) rather than wide format (variable values as columns).
@@ -2526,10 +2526,26 @@ font width unknown for character 0x20
 
 \includegraphics{Data-exploration_files/figure-pdf/unnamed-chunk-10-1.pdf}
 
-This GANTT is more visually appealing, and still retains utility in
+This Gantt is more visually appealing, and still retains utility in
 highlighting what activities occur and when. Note that we have
 suppressed the legend created by the color aesthetic, but we could have
 kept it in order to communicate additional information.
+
+Additional resources:
+
+\href{https://www.molecularecologist.com/2019/01/03/simple-gantt-charts-in-r-with-ggplot2-and-the-tidyverse/}{Simple
+Gantt charts in R with ggplot2 \ldots{} and Microsoft Excel}
+
+\href{https://plotly.com/ggplot2/gantt/}{Gantt charts using ggplott and
+Plotly}
+
+\href{https://www.appsilon.com/post/r-shiny-gantt-chart-planning-management}{R
+Shiny Gantt Chart}
+
+\href{https://www.statology.org/gantt-chart-r-ggplot2/}{How to Create a
+Gantt Chart in R Using ggplot2}
+
+Happy Gantting!
 
 \chapter{Mapping}\label{mapping}
 
