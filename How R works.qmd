@@ -7,7 +7,7 @@ title: "How R works"
 # standard figure size and generate clean output
 knitr::opts_chunk$set(autodep=T, fig.height=4, fig.width=6, warning=FALSE, message=FALSE, cache=TRUE, error=T, echo=T)
 library(here)
-source("prep.R")
+source(here("prep.R"))
 ```
 
 Most of us are familiar with Excel or used a software like SPSS, SAS, or STATA in school. Some of us use these regularly at work.
