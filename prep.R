@@ -1,23 +1,11 @@
 # prep
 
-packages <- c("arm", "BMA", "brms", "corrplot","DescTools", "estimatr","extrafont", "extrafontdb", "janitor",
-              "reshape2","tidyr","broom", "haven", "HH","Hmisc","lubridate","knitr", "margins", "magrittr",
-              "plotrix", "scales","survey", "srvyr", "sysfonts", "foreign","car", "ICC", "PowerUpR", "openxlsx",
-              "ggrepel", "readr", "readxl", "sjmisc", "sjPlot", "sjstats", "sjlabelled", "skimr","labelled",
-              "texreg", "janitor","psych","dplyr", "tidyverse", "viridis", "here", "ggridges", "ggthemes",
-              "DT", "jtools", "huxtable", "stringi", "gghighlight", "plm", "brms", "rstan",
-              "rstanarm","tidybayes","texreg","gt","gtsummary","huxtable","stargazer", "gsynth", "panelView",
-              "assertr", "pointblank", "validate", "sandwich")
-
-lapply(packages, library, character.only=T)
-
-font_add_google("Source Sans Pro", "sans-serif")
-
-
+# packages ----
 base_packages <- c("tidyverse", "easystats", "corrplot","DescTools","estimatr","extrafont","janitor",
                    "reshape2", "haven", "broom","HH","Hmisc","plotrix","scales","sysfonts","foreign","car",
                    "ICC","openxlsx","readr","readxl","sjmisc","sjPlot","flextable", "sjstats","sjlabelled","skimr",
-                   "labelled", "texreg","psych","viridis","here","jtools","huxtable","stringi", "kableExtra")
+                   "labelled", "texreg","viridis","here","jtools","huxtable","stringi", "kableExtra", "psych",
+                   "devtools")
 
 # Install packages not yet installed
 installed_packages <- base_packages %in% rownames(installed.packages())
@@ -26,6 +14,7 @@ if (any(installed_packages == FALSE)) {
 }
 
 lapply(base_packages, library, character.only=T)
+
 
 viz_packages <- c("patchwork","gganimate","ggstatsplot","ggthemes","ggrepel","ggpubr","cowplot","ggdist","ggtext",
                   "geomtextpath","ggfortify", "ggridges", "gghighlight")
@@ -38,6 +27,62 @@ if (any(installed_packages == FALSE)) {
 
 lapply(viz_packages, library, character.only=T)
 
+
+# survey_packages <- c("survey", "surveyr")
+# 
+# # Install packages not yet installed
+# installed_packages <- survey_packages %in% rownames(installed.packages())
+# if (any(installed_packages == FALSE)) {
+#   install.packages(survey_packages[!installed_packages])
+# }
+# 
+# lapply(viz_packages, library, character.only=T)
+
+
+model_packages <- c("plm","estimatr", "lme4")
+
+# Install packages not yet installed
+installed_packages <- model_packages %in% rownames(installed.packages())
+if (any(installed_packages == FALSE)) {
+  install.packages(model_packages[!installed_packages])
+}
+
+lapply(model_packages, library, character.only=T)
+
+
+# bayes_packages <- c("rstan","rstanarm","brms","rethinking")
+# 
+# # Install packages not yet installed
+# installed_packages <- bayes_packages %in% rownames(installed.packages())
+# if (any(installed_packages == FALSE)) {
+#   install.packages(bayes_packages[!installed_packages])
+# }
+# 
+# lapply(bayes_packages, library, character.only=T)
+
+
+ie_packages <- c("gsynth", "MatchIt", "did", "bacondecomp", "plm", "qte")
+
+# Install packages not yet installed
+installed_packages <- ie_packages %in% rownames(installed.packages())
+if (any(installed_packages == FALSE)) {
+  install.packages(ie_packages[!installed_packages])
+}
+lapply(ie_packages, library, character.only=T)
+
+
+# map_packages <- c("rgeoboundaries", "ggmap", "sf","rnaturalearth","rnaturalearthdata",
+#                   "mapview", "spData", "spDataLarge", "tmap", "crsuggest", "geodata", "terra")
+# 
+# # Install packages not yet installed
+# installed_packages <- map_packages %in% rownames(installed.packages())
+# if (any(installed_packages == FALSE)) {
+#   install.packages(map_packages[!installed_packages])
+# }
+# 
+# lapply(map_packages, library, character.only=T)
+
+
 table_packages <- c("gt", "gtsummary", "gtExtras","flextable", "officer")
 # Install packages not yet installed
 installed_packages <- table_packages %in% rownames(installed.packages())
@@ -46,6 +91,7 @@ if (any(installed_packages == FALSE)) {
 }
 
 lapply(table_packages, library, character.only=T)
+
 
 miss_packages <- c("missForest","missMDA")
 
@@ -56,6 +102,7 @@ if (any(installed_packages == FALSE)) {
 }
 
 lapply(miss_packages,library, character.only=T)
+
 
 options(digits=3, scipen=6)
 
