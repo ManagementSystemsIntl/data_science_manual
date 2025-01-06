@@ -2,6 +2,14 @@
 title: "How R works"
 ---
 
+```{r global_options, include=F, warning=F, message=F, echo=F, error=F}
+
+# standard figure size and generate clean output
+knitr::opts_chunk$set(autodep=T, fig.height=4, fig.width=6, warning=FALSE, message=FALSE, cache=TRUE, error=T, echo=T)
+library(here)
+source("prep.R")
+```
+
 Most of us are familiar with Excel or used a software like SPSS, SAS, or STATA in school. Some of us use these regularly at work.
 
 A programming environment, such as R, offers some cool stuff.
@@ -158,8 +166,7 @@ Note that the labels are just labels, the underlying representation is still 1 a
 str(a_f)
 ```
 
-
-Factors can sometimes cause trouble. More contemporary practice is to stick with an integer data type and add your own labels. 
+Factors can sometimes cause trouble. More contemporary practice is to stick with an integer data type and add your own labels.
 
 ```{r}
 library(tidyverse)
@@ -183,7 +190,7 @@ frq(a_f)
 frq(a_l)
 ```
 
-The underlying integers behind factor labels have no ordering. To establish an ordering, make an ordered factor. 
+The underlying integers behind factor labels have no ordering. To establish an ordering, make an ordered factor.
 
 ```{r}
 ord <- sample(1:5, 100, replace=T)
@@ -196,9 +203,9 @@ ord.fac <- ordered(ord, labels=ord.labs)
 table(ord.fac)
 ```
 
-But again, you have to be careful not to accidentally jumble the underlying integers with the ordered labels. 
+But again, you have to be careful not to accidentally jumble the underlying integers with the ordered labels.
 
-To keep things more explicit, I would still stick with an integer variable with labels, rather than an ordered factor. 
+To keep things more explicit, I would still stick with an integer variable with labels, rather than an ordered factor.
 
 ```{r}
 ord.l <- ord %>%
@@ -211,15 +218,15 @@ table(ord.l)
 frq(ord.l)
 ```
 
-When you're ready to dive into this sometimes-frustrating subject, start here: 
+When you're ready to dive into this sometimes-frustrating subject, start here:
 
-* [forcats](https://forcats.tidyverse.org/) package in the tidyverse
-* [working with labelled data](https://cran.r-project.org/web/packages/sjlabelled/vignettes/labelleddata.html)
-* [wrangling categorical data in R](https://peerj.com/preprints/3163/)
+-   [forcats](https://forcats.tidyverse.org/) package in the tidyverse
+-   [working with labelled data](https://cran.r-project.org/web/packages/sjlabelled/vignettes/labelleddata.html)
+-   [wrangling categorical data in R](https://peerj.com/preprints/3163/)
 
 ## Sub-setting
 
-You can cut up your objects into other objects. The base R way to do this is to use brackets. 
+You can cut up your objects into other objects. The base R way to do this is to use brackets.
 
 ### sub-setting vectors
 
@@ -259,19 +266,6 @@ str(df_f)
 
 ```
 
-The comma within the bracket specifies rows and columns. 
+The comma within the bracket specifies rows and columns.
 
-More contemporary practice uses what is referred to as the tidyverse. 
-
-
-
-
-
-
-
-
-
-
-
-
-
+More contemporary practice uses what is referred to as the tidyverse.

@@ -1,0 +1,26 @@
+unnamed-chunk-1	
+unnamed-chunk-2	
+unnamed-chunk-3	
+unnamed-chunk-4	c
+unnamed-chunk-5	matrix
+unnamed-chunk-6	class	list
+unnamed-chunk-7	c	data.frame
+unnamed-chunk-8	::	c	data.frame
+unnamed-chunk-9	sample	T	table
+unnamed-chunk-10	a	c	factor	table
+unnamed-chunk-11	a_f	str
+unnamed-chunk-12	%>%	a	c	library	set_labels	str
+unnamed-chunk-13	a	frq
+unnamed-chunk-14	a_f	frq
+unnamed-chunk-15	a_l	frq
+unnamed-chunk-16	sample	T	table
+unnamed-chunk-17	c	ord	ordered	table
+unnamed-chunk-18	%>%	ord	ord.labs	set_labels	table
+unnamed-chunk-19	frq	ord.l
+unnamed-chunk-20	rpois
+unnamed-chunk-21	a
+unnamed-chunk-22	a	c
+unnamed-chunk-23	a
+unnamed-chunk-24	>	a
+unnamed-chunk-25	df	str
+unnamed-chunk-26	df	str

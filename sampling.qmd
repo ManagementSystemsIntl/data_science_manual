@@ -7,7 +7,7 @@ title: "Sampling"
 # standard figure size and generate clean output
 knitr::opts_chunk$set(autodep=T, fig.height=4, fig.width=6, warning=FALSE, message=FALSE, cache=TRUE, error=T, echo=T)
 library(here)
-source("../Methods Corner/misc/prep.R")
+source("prep.R")
 ```
 
 # Introduction
@@ -16,16 +16,13 @@ source("../Methods Corner/misc/prep.R")
 
 ## With replacement
 
-
 ## Without replacement
 
 # Complex sampling
 
 ## Stratified sampling
 
-
 ## Cluster sampling
-
 
 ## Using intraclass-correlation to estimate sample sizes
 
